@@ -42,7 +42,17 @@ You can view the dorks that are already placed inside the txt using <br>the comm
     <br> <br>
     <img src="https://private-user-images.githubusercontent.com/112598996/259143078-2dd15332-7dfd-4537-b2cd-5d761f30198e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE1MDgzOTIsIm5iZiI6MTY5MTUwODA5MiwicGF0aCI6Ii8xMTI1OTg5OTYvMjU5MTQzMDc4LTJkZDE1MzMyLTdkZmQtNDUzNy1iMmNkLTVkNzYxZjMwMTk4ZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwODA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDgwOFQxNTIxMzJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lNGU3OTEzYzdmZWRlMzk1M2Q3YWM3ZmViYmE1Zjg4YWQ2MjhhNjM0N2NiMzZmZjdkNzc5YWZjYWQ0MWU4YzhmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.aImgyi6kZp0B-CymYvCPAnd5jRSWhfNTXAF0c6P1f0c">
     
-  `please, don't forget the commas to separate each payload!`
+
+<p align="center">
+  <kbd>PLEASE, DON'T FORGET THE COMMAS TO SEPARATE EACH PAYLOAD!</kbd><br>
+  <br>
+<img src="https://private-user-images.githubusercontent.com/112598996/259153649-7aec9a6e-5143-42a9-935f-c8d4b70bb2f9.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE1MDk2MjUsIm5iZiI6MTY5MTUwOTMyNSwicGF0aCI6Ii8xMTI1OTg5OTYvMjU5MTUzNjQ5LTdhZWM5YTZlLTUxNDMtNDJhOS05MzVmLWM4ZDRiNzBiYjJmOS5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwODA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDgwOFQxNTQyMDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jYWJlNTAwMWRlMTk5M2U4MTE0ODYzMWIxMmJhMmY4YWM5MWVkMmUyYmMyNDBhMDBiYzdjNzk4ZDIxNDYzN2I0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9._kDdkJuTVB4kTMfB6CeBk0jWfHgXPqONKhG9n5-Z5Gs">  
+</p>
+
+- **3 - running the script**<br>
+  <sub > here is a description.</sub>
+    <br> <br>
+
 <br>
 <h1 align="center" color="red">
 Contribuitors :white_heart:
