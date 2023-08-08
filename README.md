@@ -9,19 +9,44 @@ break the law of any country. </sub>
   </p>
 Tutorials :robot:
 </h1>
-<sub> d0rkhub is very simple to use, but let's go step by step. <br>
+
+<sub>(d0rkhub is very simple to use, but let's go step by step.) <br>
 "baby steps.."</sub>
+<br>
 <br>
 
 
 - **1 - Chosing a domain**<br>
-<sub>the domain must be placed without the "https://" </sub><br> 
+<sub>the domain must be placed without the <kbd>https://</kbd> </sub><br> 
   <sub> `[+]target domain:`www.example.com</sub>
   <br>  <br>
-- **2 - Setting the txt file**<br>
-<sub>  If you already have a target domain, now you must configure your txt file,<br> which is already inside the d0rkhub folder, the file name is "dorks.txt".</sub>
+#  
 
-# Contribuitors :white_heart:
+- **2 - Setting the txt file**<br>
+<img src="https://private-user-images.githubusercontent.com/112598996/259142708-3ea978f0-5af6-45c2-9268-151511ac633f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE1MDc2NzYsIm5iZiI6MTY5MTUwNzM3NiwicGF0aCI6Ii8xMTI1OTg5OTYvMjU5MTQyNzA4LTNlYTk3OGYwLTVhZjYtNDVjMi05MjY4LTE1MTUxMWFjNjMzZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwODA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDgwOFQxNTA5MzZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02MzAyODhiNzNiNzM1MWQ4ZWFiMDA4MjZjMWY3OWI5YTQ0ZGQ5ZjE5OGQ1YzZjNWQ4OTI1NzhkNmZlMzQ4YmE4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.rD0kqLZAwPpE2stE5OZxuiO-4Hw3i7EQaouGUT8wK88">
+<sub>  If you already have a target domain, now you must configure your txt file,<br> which is already inside the d0rkhub folder, the file name is <kbd>dorks.txt</kbd>.</sub>
+<br><br>
+
+#  
+
+- **2.1 - Viewing the content**<br>
+  <sub>
+You can view the dorks that are already placed inside the txt using <br>the command prompt as in the example:</sub>
+    <br>
+<img src="https://private-user-images.githubusercontent.com/112598996/259142935-a848077d-7b1a-44e7-be1a-5151b5cbb7e4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE1MDgxMjMsIm5iZiI6MTY5MTUwNzgyMywicGF0aCI6Ii8xMTI1OTg5OTYvMjU5MTQyOTM1LWE4NDgwNzdkLTdiMWEtNDRlNy1iZTFhLTUxNTFiNWNiYjdlNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwODA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDgwOFQxNTE3MDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zZmY4YmYwMjA2NzYzM2U2NWEwZGRkNzA4YWM2M2U1YWMyMTgyNTA2OTMyNjYwMGIyZjkwM2E2NGYwMzdiZGZhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.yvPov92TstqYcD7qT6fKlgtKtSIocZa5NZy8End2KMo">
+
+#
+
+- **2.2 - Changing the content**<br>
+  <sub > After viewing the txt content, you can simply open it and <br> modify it by adding new payloads.</sub>
+    <br> <br>
+    <img src="https://private-user-images.githubusercontent.com/112598996/259143078-2dd15332-7dfd-4537-b2cd-5d761f30198e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE1MDgzOTIsIm5iZiI6MTY5MTUwODA5MiwicGF0aCI6Ii8xMTI1OTg5OTYvMjU5MTQzMDc4LTJkZDE1MzMyLTdkZmQtNDUzNy1iMmNkLTVkNzYxZjMwMTk4ZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwODA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDgwOFQxNTIxMzJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lNGU3OTEzYzdmZWRlMzk1M2Q3YWM3ZmViYmE1Zjg4YWQ2MjhhNjM0N2NiMzZmZjdkNzc5YWZjYWQ0MWU4YzhmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.aImgyi6kZp0B-CymYvCPAnd5jRSWhfNTXAF0c6P1f0c">
+    
+  `please, don't forget the commas to separate each payload!`
+<br>
+<h1 align="center" color="red">
+Contribuitors :white_heart:
+</h1>
 
 <table align="center">
   <tr>
@@ -30,9 +55,6 @@ Tutorials :robot:
   <td align="center"><a href="https://github.com/gabrielsatoshi"><img src="https://private-user-images.githubusercontent.com/112598996/259101791-2ba87cb3-6ccc-4ec0-8f2d-791ef5c8921e.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE0OTkwMzAsIm5iZiI6MTY5MTQ5ODczMCwicGF0aCI6Ii8xMTI1OTg5OTYvMjU5MTAxNzkxLTJiYTg3Y2IzLTZjY2MtNGVjMC04ZjJkLTc5MWVmNWM4OTIxZS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwODA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDgwOFQxMjQ1MzBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01YjBmZmIxM2ZmZWQzMjZmNDNlNTNkMGE1Zjk5MjAzNTFiYTBlNDgzZWQwMmZlOTYzY2RiMTE0NWM4MGIwMzUzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.htqhPVvcG7QCdiGr_I3CjFoyrz5QIU5pNCg0LQb_TL4" width="100px;" alt="artico"/><br /><sub><b>l1nu$</b></sub></a><br /><a href="z" title="Answering Questions"></a> <a href="https://github.com/gabrielsatoshi" title="Code">💻</a> <a href="https://github.com/gabrielsatoshi" title="Documentation"></a> </td>
   </tr>
 </table>
-
-
-
 
 
 
