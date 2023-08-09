@@ -1,6 +1,10 @@
 import requests
-import time
+from bs4 import BeautifulSoup
 from termcolor import colored
+import time
+
+#       enjoy :)
+
 ascii_d0rkhub = '''
        /$$  /$$$$$$            /$$       /$$                 /$$      
       | $$ /$$$_  $$          | $$      | $$                | $$      
@@ -12,33 +16,56 @@ ascii_d0rkhub = '''
  \_______/ \______/ |__/      |__/  \__/|__/  |__/ \______/ |_______/ 
 '''
 print('')
-print('_________________________________________________________________________')
-print(ascii_d0rkhub)
-print('_________________________________________________________________________')
+print(colored('_________________________________________________________________________','blue'))
+print(colored(ascii_d0rkhub,'green'))
+print(colored('                       created by l1nu$ & artico','yellow'))
+print(colored('_________________________________________________________________________','blue'))
 print('')
-print(colored('                           by l1nus & artico                    ','red'))
+
+see_dorks = str(input(colored('~ View payloads? ~ [y/n] ','red')))
+if(see_dorks == 'y'):
+    with open('dorks.txt', 'r') as d:
+        dork_file = d.read()
+        see_payloads = (colored(dork_file,'yellow'))
+        print('')
+        print('Payloads:'+see_payloads)
+else:
+    ('ok..')
+print('')
+print(colored('~ Give me a target domain ~','magenta'))
+domain = input(colored('+ ','magenta'))
+
+
+def google_search_urls(query):
+    search_query = "https://www.google.com/search?q=" + query.replace(' ', '+')
+
+
+    response = requests.get(search_query)
+
+
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+
+    search_results = soup.find_all('a')
+    urls = [link['href'] for link in search_results if link['href'].startswith('/url?q=')]
+
+
+    clean_urls = [url.split('/url?q=')[1].split('&')[0] for url in urls]
+
+
+    return clean_urls
+
+with open('dorks.txt', 'r') as d:
+    dork_file = d.read()
+
+query = domain
+
+search_urls = google_search_urls(dork_file + f' site: {domain}')
+print('')
+print(colored(f'Results for : "{domain}"','magenta'))
+
+for line in search_urls:
+    print(colored(line,'yellow'))
+
 print('')
 
-def check_response(domain):
-    url = "https://" + domain
-    try:
-        response = requests.get(url)
-        if response.status_code == 200:
-            print(colored(f"Success!! :) {response}", "green"))
-            time.sleep(2)
-            print(colored(f'Results for "{domain}" : ', "yellow"))
-        else:
-            print(colored(f"Fail!! :( {response})", "red"))
-    except requests.exceptions.RequestException as e:
-        print(colored("domain failure!", "red"))
-
-domain = input(colored("[+]Digite o domínio: ",'red','on_red'))
-check_response(domain)
-
-def dork_scraping():
-    dork_file = "dork.txt"
-    with open(dork_file, "r") as arquivo:
-        content = arquivo.read()
-    
-
-dork_scraping()
