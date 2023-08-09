@@ -9,7 +9,7 @@ break the law of any country. </sub>
   ![google-logo-typing-computer-h9kzpep9xylexh2v](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/1762d3ec-c8c6-47da-8bd3-ae61aa3e6101)
 
   </p>
-Tutorials :robot:
+(Windows)Tutorials :robot:
 </h1>
 
 <sub>(d0rkhub is very simple to use, but let's go step by step.) <br>
