@@ -40,17 +40,27 @@ information = (colored('d0rkhub is a tool that should be used for academic purpo
 print(colored(warning+information))
 print(colored('https://github.com/gabrielsatoshi/d0rkhub','black'))
 #################VIEW PAYLOADS##############
-see_dorks = str(input(colored('~ View payloads? ~ [y/n] ','red')))
+see_dorks = str(input(colored('~ View payloads? ~ [y/n] ','cyan')))
 def view_payloads():
     if(see_dorks == 'y'):
-        with open('dorks.txt', 'r') as d:
+        with open('program/dorks.txt', 'r') as d:
             dork_file = d.read()
             see_payloads = (colored(dork_file,'yellow'))
             print('')
             print('Payloads:'+see_payloads)
+            print('')
     else:
         ('ok..')
 view_payloads()
+##################VIEW DB###################
+
+see_db = str(input(colored('~ View data? ~ [y/n] ','cyan')))
+if(see_db == 'y'):
+    for row in con.execute('SELECT * FROM urls '):
+        print(colored(row,'blue'))
+print('')
+delete_db = str(input(colored('~ Want delete data? ~ [y/n] ','red')))
+
 
 ###############CAPTURING DOMAIN#############
 
@@ -81,7 +91,7 @@ def google_search_urls(query):
 
 ##############GETTING THE PAYLOADS##########
 
-with open('dorks.txt', 'r') as d:
+with open('program/dorks.txt', 'r') as d:
     dork_file = d.read()
 
 #########JOINING PAYLOADS TO DOMAIN#########
@@ -99,7 +109,7 @@ print('')
 
 ##########QUESTION SAVE RESULTS#############
 
-save_results = input(colored('~ Save results? ~','magenta'))
+save_results = input(colored('~ Save results? [y/n] ~','magenta'))
 print('')
 while save_results != 'y' and save_results != 'n':
     save_results = input(colored('Try [y/n] :','red'))
@@ -117,6 +127,5 @@ if(save_results == 'y'):
     ##############CLOSING CONECTION#############
     con.close()
 else:
-    print('Bye..')
-
+    print(colored('Bye..','magenta'))
 
