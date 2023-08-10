@@ -58,9 +58,21 @@ You can view the dorks that are already placed inside the txt using <br>the comm
 </p>
 
 
-- **3 - running the script**<br>
-  <sub > here is a description.</sub>
-    <br> <br>
+- **3 - running the script**<br><br>
+  <sub > When opening the tool you can find the first functionality right away, which asks if you want to read the txt file where the saved payloads are, if you edited the txt recently, I recommend you to check the payloads by typing "y", so you can have sure that the txt file was indeed changed and processed by the program.</sub>
+  <br>
+  <br>
+![d0rkhub_script_logo](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/61dcabe2-d3b3-4e81-898a-c0ea191ec15a)
+
+- **3 - Example**<br><br>
+    
+  ![payloads_example](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/b0e5ff19-7982-41c1-9350-4765d5ceff83)
+<br>
+
+- **4 - Using a domain**<br>
+  <sub > Remember the first step? now you must use it, for that insert the target domain.</sub>
+
+  ![target_domain_example](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/d70c8d00-4f81-4ca8-9eed-ef784210d8d7)
 
 <br>
 <h1 align="center" color="red">
