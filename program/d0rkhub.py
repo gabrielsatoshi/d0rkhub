@@ -1,5 +1,4 @@
 ################-IMPORTS-###################
-
 import sqlite3
 import requests
 from bs4 import BeautifulSoup
@@ -7,10 +6,8 @@ from termcolor import colored
 import time
 
 ###############DATA-CONECTION###############
-
 db_name = 'save_payloads'
 con = sqlite3.connect(db_name)
-
 ###############CREATING TABLE###############
 
 con.execute('''CREATE TABLE IF NOT EXISTS urls
@@ -21,15 +18,15 @@ con.execute('''CREATE TABLE IF NOT EXISTS urls
 #################INTERFACE##################
 
 
-ascii_d0rkhub = '''
-       /$$  /$$$$$$            /$$       /$$                 /$$      
-      | $$ /$$$_  $$          | $$      | $$                | $$      
-  /$$$$$$$| $$$$\ $$  /$$$$$$ | $$   /$$| $$$$$$$  /$$   /$$| $$$$$$$ 
- /$$__  $$| $$ $$ $$ /$$__  $$| $$  /$$/| $$__  $$| $$  | $$| $$__  $$
-| $$  | $$| $$\ $$$$| $$  \__/| $$$$$$/ | $$  \ $$| $$  | $$| $$  \ $$
-| $$  | $$| $$ \ $$$| $$      | $$_  $$ | $$  | $$| $$  | $$| $$  | $$
-|  $$$$$$$|  $$$$$$/| $$      | $$ \  $$| $$  | $$|  $$$$$$/| $$$$$$$/
- \_______/ \______/ |__/      |__/  \__/|__/  |__/ \______/ |_______/ 
+ascii_d0rkhub = '''                                                        
+       /$$  /$$$$$$            /$$       /$$                 /$$        
+      | $$ /$$$_  $$          | $$      | $$                | $$         .--.
+  /$$$$$$$| $$$$\ $$  /$$$$$$ | $$   /$$| $$$$$$$  /$$   /$$| $$$$$$$   / /  ` 
+ /$$__  $$| $$ $$ $$ /$$__  $$| $$  /$$/| $$__  $$| $$  | $$| $$__  $$ | |
+| $$  | $$| $$\ $$$$| $$  \__/| $$$$$$/ | $$  \ $$| $$  | $$| $$  \ $$  \ \__,
+| $$  | $$| $$ \ $$$| $$      | $$_  $$ | $$  | $$| $$  | $$| $$  | $$   '--' 
+|  $$$$$$$|  $$$$$$/| $$      | $$ \  $$| $$  | $$|  $$$$$$/| $$$$$$$/             
+ \_______/ \______/ |__/      |__/  \__/|__/  |__/ \______/ |_______/  
 '''
 print('')
 print(colored('_________________________________________________________________________','blue'))
@@ -37,9 +34,12 @@ print(colored(ascii_d0rkhub,'green'))
 print(colored('                       created by l1nu$ & artico','yellow'))
 print(colored('_________________________________________________________________________','blue'))
 print('')
-
+#################INFORMATION################
+warning = (colored('[!]','red','on_red'))
+information = (colored('d0rkhub is a tool that should be used for academic purposes only\nit was not created to hurt or attack any government or institution.','black','on_dark_grey'))
+print(colored(warning+information))
+print(colored('https://github.com/gabrielsatoshi/d0rkhub','black'))
 #################VIEW PAYLOADS##############
-
 see_dorks = str(input(colored('~ View payloads? ~ [y/n] ','red')))
 def view_payloads():
     if(see_dorks == 'y'):
@@ -107,20 +107,14 @@ while save_results != 'y' and save_results != 'n':
 ##########QUESTION CONDITIONAL##############
 
 if(save_results == 'y'):
-       
     #######SAVING THE RESULTS ON DATABANK#######
-       
     con.execute(f'INSERT INTO urls (domain, results) VALUES ("{domain}", "{search_urls}")')
     con.commit()
-       
     ########PRINTING DATABANK RESULTS###########
-       
     print(colored(f'saved data in {db_name}.','green'))
     for row in con.execute('SELECT * FROM urls '):
         print(colored(row,'blue'))
-           
     ##############CLOSING CONECTION#############
-       
     con.close()
 else:
     print('Bye..')
