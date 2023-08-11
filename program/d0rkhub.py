@@ -1,22 +1,16 @@
-################-IMPORTS-###################
 import sqlite3
 import requests
 from bs4 import BeautifulSoup
 from termcolor import colored
 import time
 
-###############DATA-CONECTION###############
 db_name = 'save_payloads'
 con = sqlite3.connect(db_name)
-###############CREATING TABLE###############
 
 con.execute('''CREATE TABLE IF NOT EXISTS urls
                (id INTEGER PRIMARY KEY NOT NULL,
                 domain VARCHAR NOT NULL,
                 results VARCHAR NOT NULL);''')
-
-#################INTERFACE##################
-
 
 ascii_d0rkhub = '''                                                        
        /$$  /$$$$$$            /$$       /$$                 /$$        
@@ -40,92 +34,96 @@ information = (colored('d0rkhub is a tool that should be used for academic purpo
 print(colored(warning+information))
 print(colored('https://github.com/gabrielsatoshi/d0rkhub','black'))
 #################VIEW PAYLOADS##############
-see_dorks = str(input(colored('~ View payloads? ~ [y/n] ','cyan')))
-def view_payloads():
-    if(see_dorks == 'y'):
-        with open('program/dorks.txt', 'r') as d:
-            dork_file = d.read()
-            see_payloads = (colored(dork_file,'yellow'))
+number1_menu = colored('[1]DorkHub','black','on_yellow')
+number2_menu = colored('[2]View data','black','on_cyan')
+number3_menu = colored('[3]Delete data','black','on_red')
+number4_menu = colored('[4]View payloads','black','on_blue')
+number5_menu = colored('[5]Exit ','black','on_dark_grey')
+voidstring = '|'
+
+print(number1_menu+number2_menu+number3_menu+number4_menu+number5_menu+voidstring)
+def main():
+    menu_q = int(input(colored('~ Chose a number ~ :','magenta')))
+
+
+    def google_search_urls(query):
+        search_query = "https://www.google.com/search?q=" + query.replace(' ', '+')
+
+
+        response = requests.get(search_query)
+
+
+        soup = BeautifulSoup(response.content, 'html.parser')
+
+
+        search_results = soup.find_all('a')
+        urls = [link['href'] for link in search_results if link['href'].startswith('/url?q=')]
+
+
+        clean_urls = [url.split('/url?q=')[1].split('&')[0] for url in urls]
+
+
+        return clean_urls
+
+    with open('program/dorks.txt', 'r') as d:
+        dork_file = d.read()
+
+
+    match  menu_q:
+        case 1:
             print('')
-            print('Payloads:'+see_payloads)
+            time.sleep(1)
+            print(colored('~ Give me a target domain ~','magenta'))
+            domain = input(colored('+ ','magenta'))   
+            query = domain
+            with open('program/dorks.txt', 'r') as d:
+                dork_file = d.read()
+            search_urls = google_search_urls(dork_file + f' site: {domain}')
             print('')
-    else:
-        ('ok..')
-view_payloads()
-##################VIEW DB###################
-
-see_db = str(input(colored('~ View data? ~ [y/n] ','cyan')))
-if(see_db == 'y'):
-    for row in con.execute('SELECT * FROM urls '):
-        print(colored(row,'blue'))
-print('')
-delete_db = str(input(colored('~ Want delete data? ~ [y/n] ','red')))
-
-
-###############CAPTURING DOMAIN#############
-
-print('')
-print(colored('~ Give me a target domain ~','magenta'))
-domain = input(colored('+ ','magenta'))
-
-##############COFIGURING URL################
-
-def google_search_urls(query):
-    search_query = "https://www.google.com/search?q=" + query.replace(' ', '+')
-
-
-    response = requests.get(search_query)
-
-
-    soup = BeautifulSoup(response.content, 'html.parser')
-
-
-    search_results = soup.find_all('a')
-    urls = [link['href'] for link in search_results if link['href'].startswith('/url?q=')]
-
-
-    clean_urls = [url.split('/url?q=')[1].split('&')[0] for url in urls]
-
-
-    return clean_urls
-
-##############GETTING THE PAYLOADS##########
-
-with open('program/dorks.txt', 'r') as d:
-    dork_file = d.read()
-
-#########JOINING PAYLOADS TO DOMAIN#########
-
-query = domain
-search_urls = google_search_urls(dork_file + f' site: {domain}')
-print('')
-print(colored(f'~ Results for : "{domain}" ~','magenta'))
-
-#########PRINTING QUERY RESULTS#############
-
-for line in search_urls:
-    print(colored(line,'yellow'))
-print('')
-
-##########QUESTION SAVE RESULTS#############
-
-save_results = input(colored('~ Save results? [y/n] ~','magenta'))
-print('')
-while save_results != 'y' and save_results != 'n':
-    save_results = input(colored('Try [y/n] :','red'))
-
-##########QUESTION CONDITIONAL##############
-
-if(save_results == 'y'):
-    #######SAVING THE RESULTS ON DATABANK#######
-    con.execute(f'INSERT INTO urls (domain, results) VALUES ("{domain}", "{search_urls}")')
-    con.commit()
-    ########PRINTING DATABANK RESULTS###########
-    print(colored(f'saved data in {db_name}.','green'))
-    for row in con.execute('SELECT * FROM urls '):
-        print(colored(row,'blue'))
-    ##############CLOSING CONECTION#############
-    con.close()
-else:
-    print(colored('Bye..','magenta'))
-
+            print(colored(f'~ Results for : "{domain}" ~','magenta'))
+            for line in search_urls:
+                print(colored(line,'yellow'))
+            print('')
+            save_results = input(colored('~ Save results? [y/n] ~','magenta'))
+            print('')
+            while save_results != 'y' and save_results != 'n':
+                save_results = input(colored('Try [y/n] :','red'))
+            if(save_results == 'y'):
+                con.execute(f'INSERT INTO urls (domain, results) VALUES ("{domain}", "{search_urls}")')
+                con.commit()
+                print(colored(f'saved in {db_name}.','green'))
+                for row in con.execute('SELECT * FROM urls '):
+                    print(colored(row,'blue'))
+                main()
+                con.close()
+        case 2:
+            con.execute('SELECT * FROM urls')
+            if con.execute('SELECT COUNT(*) FROM urls').fetchone()[0] == 0:
+                print(colored('empty database.','red'))
+            else:
+                for row in con.execute('SELECT * FROM urls '):
+                    print(colored(row,'blue'))
+            time.sleep(1)
+            main()
+        case 3:
+            print('deleting...')
+            con.execute("drop table urls")
+            time.sleep(1)
+            con.execute('''CREATE TABLE IF NOT EXISTS urls
+                (id INTEGER PRIMARY KEY NOT NULL,
+                    domain VARCHAR NOT NULL,
+                    results VARCHAR NOT NULL);''')
+            time.sleep(1)
+            main()
+        case 4:
+            with open('program/dorks.txt', 'r') as d:
+                dork_file = d.read()
+                see_payloads = (colored(dork_file,'yellow'))
+                print('')
+                print('Payloads:'+see_payloads)
+                print('')
+            time.sleep(1)
+            main()
+        case 5:
+            con.close()
+main()
