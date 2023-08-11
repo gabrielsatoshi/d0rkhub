@@ -6,11 +6,22 @@ import time
 
 db_name = 'save_payloads'
 con = sqlite3.connect(db_name)
-
 con.execute('''CREATE TABLE IF NOT EXISTS urls
                (id INTEGER PRIMARY KEY NOT NULL,
                 domain VARCHAR NOT NULL,
                 results VARCHAR NOT NULL);''')
+
+def delete_message():
+    symbol = colored('[!]','black','on_red')
+    message = colored('You will erase all data from the table!.','black','on_yellow')
+    print(symbol+message)
+def success_message():
+    symbol = colored('[+]','black','on_black')
+    message = colored('Success!','black','on_green')
+    print(symbol+message)
+
+error = '[?]'
+success = '[+]'
 
 ascii_d0rkhub = '''                                                        
        /$$  /$$$$$$            /$$       /$$                 /$$        
@@ -30,6 +41,7 @@ print(colored('_________________________________________________________________
 print('')
 #################INFORMATION################
 warning = (colored('[!]','red','on_red'))
+voidstring2 = '|'
 information = (colored('d0rkhub is a tool that should be used for academic purposes only\nit was not created to hurt or attack any government or institution.','black','on_dark_grey'))
 print(colored(warning+information))
 print(colored('https://github.com/gabrielsatoshi/d0rkhub','black'))
@@ -92,6 +104,7 @@ def main():
                 con.execute(f'INSERT INTO urls (domain, results) VALUES ("{domain}", "{search_urls}")')
                 con.commit()
                 print(colored(f'saved in {db_name}.','green'))
+                success_message()
                 for row in con.execute('SELECT * FROM urls '):
                     print(colored(row,'blue'))
                 main()
@@ -106,7 +119,9 @@ def main():
             time.sleep(1)
             main()
         case 3:
-            print('deleting...')
+            delete_message()
+            input()
+            print(colored('deleting...','red'))
             con.execute("drop table urls")
             time.sleep(1)
             con.execute('''CREATE TABLE IF NOT EXISTS urls
