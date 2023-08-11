@@ -13,10 +13,10 @@ con.execute('''CREATE TABLE IF NOT EXISTS urls
 
 def delete_message():
     symbol = colored('[!]','black','on_red')
-    message = colored('You will erase all data from the table!.','black','on_yellow')
+    message = colored('You will erase all data!.','black','on_yellow')
     print(symbol+message)
 def success_message():
-    symbol = colored('[+]','black','on_black')
+    symbol = colored('[+]','black','on_light_grey')
     message = colored('Success!','black','on_green')
     print(symbol+message)
 
@@ -120,15 +120,18 @@ def main():
             main()
         case 3:
             delete_message()
-            input()
-            print(colored('deleting...','red'))
-            con.execute("drop table urls")
-            time.sleep(1)
-            con.execute('''CREATE TABLE IF NOT EXISTS urls
-                (id INTEGER PRIMARY KEY NOT NULL,
-                    domain VARCHAR NOT NULL,
-                    results VARCHAR NOT NULL);''')
-            time.sleep(1)
+            confirm_delete = input(colored('[-]are you sure? [y/n]','black','on_yellow'))
+            if (confirm_delete == 'y'):
+                print(colored('deleting...','red'))
+                con.execute("drop table urls")
+                time.sleep(1)
+                con.execute('''CREATE TABLE IF NOT EXISTS urls
+                    (id INTEGER PRIMARY KEY NOT NULL,
+                        domain VARCHAR NOT NULL,
+                        results VARCHAR NOT NULL);''')
+            else:
+                print(colored('canceling operation...','green'))
+                time.sleep(1)
             main()
         case 4:
             with open('program/dorks.txt', 'r') as d:
