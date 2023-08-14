@@ -77,7 +77,7 @@ def main():
 
         return clean_urls
 
-    with open('program/dorks.txt', 'r') as d:
+    with open('program/payloads.txt', 'r') as d:
         dork_file = d.read()
 
 
@@ -88,7 +88,7 @@ def main():
             print(colored('~ Give me a target domain ~','magenta'))
             domain = input(colored('+ ','magenta'))   
             query = domain
-            with open('program/dorks.txt', 'r') as d:
+            with open('program/payloads.txt', 'r') as d:
                 dork_file = d.read()
             search_urls = google_search_urls(dork_file + f' site: {domain}')
             print('')
@@ -134,7 +134,7 @@ def main():
                 time.sleep(1)
             main()
         case 4:
-            with open('program/dorks.txt', 'r') as d:
+            with open('program/payloads.txt', 'r') as d:
                 dork_file = d.read()
                 see_payloads = (colored(dork_file,'yellow'))
                 print('')
