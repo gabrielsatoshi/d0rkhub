@@ -18,13 +18,15 @@ break the law of any country. </sub>
 <br>
 
 
-- **1 - Chosing a domain**<br>
-<sub>the domain must be placed without the <kbd>https://</kbd> </sub><br> 
-  <sub> `[+]target domain:`www.example.com</sub>
+- **1 - Menu options**<br>
+<sub>When you running the code maybe you should see a menu like the one below, with options from 1 until 5. <br> **Option 1:** Option 1 will run the code normally and perform queries by url using dorks. <br> **Option 2:** Option 2 will allow you to view all queries saved within a database.<br>**Option 3:** Option 3 will allow you to delete all stored data.<br>**Option 4 :** option 4 will allow you to view all payloads contained in payloads.txt inside the "program" folder.<br>**Option 5:** Option 5 will terminate the code. </sub><br>
+
+ ![menu_d0rkhub](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/e61fa7c3-a251-4233-8acd-53408d80ab1a)
+  
   <br>  <br>
 #  
 
-- **2 - Setting the txt file**<br>
+- **2 - Payloads**<br>
 
 ![file_txt_dorks_folder](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/3ea978f0-5af6-45c2-9268-151511ac633f)
 
