@@ -47,9 +47,11 @@ Your payloads containing the google dorks commands will be present in <kbd>paylo
 ![txt_payloads](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/fbb33df1-5e6b-41e2-9662-5577ad3691cc)
 #  
 
-- **3 - Domains**<br><br>
+<br>
+
+- **3 - Domains**<br>
 <sub>
-Dont use the https:// is not necessary.</sub><br><br>
+Dont use the https:// is not necessary.</sub><br>
 
 <sub>
 This is a correct way to use : <br>
@@ -59,8 +61,20 @@ This is a incorrect way to use : <br>
 <kbd>https://www.google.com</kbd>
 </sub>
 <br><br>
-  
 <br>
+
+- **4 - Requirements**
+<sub>
+You need some modules to run the d0rkhub script, they are:</sub><br><br>
+<kbd>bs4</kbd><br>
+<kbd>requests</kbd><br>
+<kbd>termcolor</kbd><br>
+<br>
+<sub>
+We have a .bat file in the folder with the pip install of all this modules, you can run or u can do  
+manually.
+</sub>
+  <br>
 
 
 <br>
