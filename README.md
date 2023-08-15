@@ -12,72 +12,18 @@ break the law of any country. </sub>
 (Windows and Linux)Tutorials :robot:
 </h1>
 
-
-- **1 - Menu options**<br>
-<sub>When you running the code maybe you should see a menu like the one below, with options from 1 until 5. <br> <br> **Option 1:** Option 1 will run the code normally and perform queries by url using dorks.</sub>
-
-  ![case1](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/9bbd54bb-272e-4b06-9db3-862519983645)
-
-  <sub><br> **Option 2:** Option 2 will allow you to view all queries saved within a database.</sub>
+- **1 - Running the code**<br>
+<sub>This code was developed to be run by terminal (Linux) or Dos (Windows), its way of execution is not different from other tools.<br><br>
+1.1 If you are in windows you have to type this code on your terminal:<br> <kbd> cd desktop<br> cd d0rkhub <br> cd program <br> python d0rkhub.py</kbd>
+<br> <br>
+this is the result:
+  </sub>
   
-  ![case2](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/acff9b18-f2d6-4fa0-87d2-468cf4a6d0b0)
+![d0rkhub_result](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/4ba9288c-b2bc-497b-84bd-e790d78809c8)
 
-  <sub><br>**Option 3:** Option 3 will allow you to delete all stored data.</sub>
-
-  ![case3](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/b66a3ff1-194c-44e6-b387-8f0892464860)
-
-  <sub><br>**Option 4 :** option 4 will allow you to view all payloads contained in payloads.txt inside the "program" folder.</sub>
-
-  ![payloads_d0rkhub](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/1e9bf01e-5cd6-4704-ab42-016881659195)
-
-  <sub><br>**Option 5:** Option 5 will terminate the code.</sub>
-<br>
-
-  ![case5](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/74c2998c-18b6-4ae0-a787-a68433b62a56)
-
-  
-#  
-
-- **2 - Payloads**<br>
-
-<sub>  
-Your payloads containing the google dorks commands will be present in <kbd>payloads.txt</kbd>, there you can configure the dorks as you want.</sub>
-<br><br>
-
-![txt_payloads](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/fbb33df1-5e6b-41e2-9662-5577ad3691cc)
-#  
-
-<br>
-
-- **3 - Domains**<br>
-<sub>
-Dont use the https:// is not necessary.</sub><br>
-
-<sub>
-This is a correct way to use : <br>
-<kbd>www.google.com</kbd>
-<br>
-This is a incorrect way to use : <br>
-<kbd>https://www.google.com</kbd>
-</sub>
-<br><br>
-<br>
-
-- **4 - Requirements**
-<sub>
-You need some modules to run the d0rkhub script, they are:</sub><br><br>
-<kbd>bs4</kbd><br>
-<kbd>requests</kbd><br>
-<kbd>termcolor</kbd><br>
-<br>
-<sub>
-We have a .bat file in the folder with the pip install of all this modules, you can run or u can do  
-manually.
-</sub>
-  <br>
+#
 
 
-<br>
 <h1 align="center" color="red">
 Contribuitors :white_heart:
 </h1>
