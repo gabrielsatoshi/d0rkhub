@@ -2,8 +2,7 @@ import sqlite3
 import requests
 from bs4 import BeautifulSoup
 import time
-import os
-os.system('color 3')
+
 
 db_name = 'save_payloads'
 con = sqlite3.connect(db_name)
@@ -57,7 +56,6 @@ number5_menu = ('[5]Exit ')
 print('_________________________________________________________________________')
 print(number1_menu+number2_menu+number3_menu+number4_menu+number5_menu)
 def main():
-    os.system('color 3')
     print('')
     menu_q = int(input('~ Chose a number ~ :'))
 
@@ -106,8 +104,7 @@ def main():
             while save_results != 'y' and save_results != 'n':
                 save_results = input('Try [y/n] :')
             if(save_results == 'y'):
-                os.system('color 6')
-                time.sleep(2)
+                time.sleep(1)
                 con.execute(f'INSERT INTO urls (domain, results) VALUES ("{domain}", "{search_urls}")')
                 con.commit()
                 print(f'saved in {db_name}.')
@@ -117,25 +114,20 @@ def main():
                 main()
                 con.close()
         case 2:
-            os.system('color 2')
-            time.sleep(2)
+            time.sleep(1)
             con.execute('SELECT * FROM urls')
             if con.execute('SELECT COUNT(*) FROM urls').fetchone()[0] == 0:
-                os.system('color 4')
                 print('empty database.')
             else:
-                os.system('color 2')
-                time.sleep(2)
+                time.sleep(1)
                 for row in con.execute('SELECT * FROM urls '):
                     print(row)
             time.sleep(1)
             main()
         case 3:
-            os.system('color 4')
             delete_message()
             confirm_delete = input('[-]are you sure? [y/n]')
             if (confirm_delete == 'y'):
-                os.system('color 2')
                 print('deleting...')
                 con.execute("drop table urls")
                 time.sleep(1)
@@ -144,12 +136,10 @@ def main():
                         domain VARCHAR NOT NULL,
                         results VARCHAR NOT NULL);''')
             else:
-                os.system('color 2')
                 print('canceling operation...')
                 time.sleep(1)
             main()
         case 4:
-            os.system('color 6')
             with open('payloads.txt', 'r') as d:
                 dork_file = d.read()
                 see_payloads = (dork_file)
