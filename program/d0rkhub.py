@@ -96,7 +96,7 @@ def main():
             print('')
             print(f'~ Results for : "{domain}" ~')
             for line in search_urls:
-                print(line,'yellow')
+                print(line)
             print('')
             save_results = input('~ Save results? [y/n] ~')
             
