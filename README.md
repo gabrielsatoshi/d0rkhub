@@ -12,14 +12,29 @@ break the law of any country. </sub>
 (Windows and Linux)Tutorials :robot:
 </h1>
 
-- **1 - Running the code**<br>
+ **- Requirements -**
+
+<sub>We have a requirements file build in a batch file, you can run the <kbd>requirements.bat</kbd> in the modules folder.<br> but if you dont trust in us, you also can do it manually in the terminal : <br><br> <kbd>pip install requests<br>pip install bs4<br>pip install sqlite3 </kbd><br><br>
+you also need to download the d0rkhub folder, you can do this using git. if dont have the git you can dowload in : <br>
+<a>https://git-scm.com/download/win</a><br>
+the git terminal command:<br>
+<kbd>cd desktop<br>git clone https://github.com/gabrielsatoshi/d0rkhub.git</kbd>
+</sub>
+
+#
+
+
+- **1 - Running the code - (Windows**)<br>
 <sub>This code was developed to be run by terminal (Linux) or Dos (Windows), its way of execution is not different from other tools.<br><br>
-1.1 If you are in windows you have to type this code on your terminal:<br> <kbd> cd desktop<br> cd d0rkhub <br> cd program <br> python d0rkhub.py</kbd>
+1.1 If you are in windows you have to type this code on your terminal:<br><br> <kbd> cd desktop<br> cd d0rkhub <br> cd program <br> python d0rkhub.py</kbd>
 <br> <br>
-this is the result:
+**this is the result:**
   </sub>
   
 ![d0rkhub_result](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/4ba9288c-b2bc-497b-84bd-e790d78809c8)
+
+#
+
 
 #
 
