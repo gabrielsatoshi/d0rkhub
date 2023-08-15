@@ -1,5 +1,5 @@
 #  D0rkHub :skull: 
-**<sub>The d0rkhub  </sub>** <sub>d0rkhub is a tool developed in python created to exploit vulnerabilities using the google search engine that loads a txt payload with
+**<sub>The d0rkhub  </sub>** <sub> is a tool developed in python created to exploit vulnerabilities using the google search engine that loads a txt payload with
 commands that manipulate google, returning urls vulnerable to exploits. **d0rkhub** was developed exclusively for educational purposes and should not be used for
 break the law of any country. </sub>
 
