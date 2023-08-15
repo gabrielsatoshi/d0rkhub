@@ -9,7 +9,7 @@ break the law of any country. </sub>
   ![d0rkhublogo](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/c49e6f31-46ac-43d4-a2d3-1e8a808a5cb7)
 
   </p>
-(Windows)Tutorials :robot:
+(Windows and Linux)Tutorials :robot:
 </h1>
 
 
