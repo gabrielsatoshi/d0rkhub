@@ -35,3 +35,5 @@ google dorks is powerful and very simple to use, the name is very suggestive rig
 --- Who is l1nu$ and artico? ---
  We are two information security enthusiasts who decided to automate the process of searching for dorks, 
 there are other tools that perform this function, but we leave it more personalized with our face and simpler to use.
+
+example:https://www.americanas.com.br/hotsite/redirect-cetelem-2?cetelemLink=https://github.com/gabrielsatoshi
