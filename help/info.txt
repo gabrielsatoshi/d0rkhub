@@ -39,3 +39,4 @@ there are other tools that perform this function, but we leave it more personali
 example:https://www.americanas.com.br/hotsite/redirect-cetelem-2?cetelemLink=https://github.com/gabrielsatoshi
 example2:https://www.gov.br/ctir/pt-br/centrais-de-conteudo/palestras-em-pdf/coloquios/10o-coloquio-ctir-gov-2013-2017/1coloquio2017_palestra04_ctir_alexandresantos.pdf
 inurl:"php?cat="
+example3:https://sqlitebrowser.org/
