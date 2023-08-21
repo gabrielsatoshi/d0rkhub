@@ -69,11 +69,11 @@ class Funcs:
 
                 return clean_urls
             domain = self.domain_entry.get()
-            search_urls = google_search_urls('intitle:index of ' + f' site: {domain}') 
+            search_urls = google_search_urls('intitle:index of/' + f' site: {domain}') 
             print('')
             print(f'~ Results for : "{domain}" ~')
             for line in search_urls:
-                self.results_entry.insert(tk.END,line)
+                self.results_entry.insert(tk.END,f'{line}\n')
     def whois(self):
         domain = self.domain_entry.get()
         consult = whois.whois(domain)
