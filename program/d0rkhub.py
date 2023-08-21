@@ -28,22 +28,22 @@ class Funcs:
         print(domain)
     def dork_generation(self):
         if (self.dropdown.get() == 'XSS INJECTION'):
-            with open('program/xss_dorks.txt', 'r') as d:
+            with open('../payloads/xss_dorks.txt', 'r') as d:
                 dork_file = d.read()
                 xss_payloads = (dork_file)  
             self.payloads_entry.insert(tk.END,xss_payloads)
         elif (self.dropdown.get() == 'SQL INJECTION'):
-            with open('program/sql_injection_dorks.txt', 'r') as d:
+            with open('../payloads/sql_injection_dorks.txt', 'r') as d:
                 dork_file = d.read()
                 sql_payloads = (dork_file)
             self.payloads_entry.insert(tk.END,sql_payloads)  
         elif (self.dropdown.get() == 'HTML INJECTION'):
-            with open('program/html_injection.txt', 'r') as d:
+            with open('../payloads/html_injection.txt', 'r') as d:
                 dork_file = d.read()
                 html_payloads = (dork_file)
             self.payloads_entry.insert(tk.END,html_payloads)   
         elif (self.dropdown.get() == 'DEFAULT'):
-            with open('program/default_dorks.txt', 'r') as d:
+            with open('../payloads/default_dorks.txt', 'r') as d:
                 dork_file = d.read()
                 default_payloads = (dork_file) 
             self.payloads_entry.insert(tk.END,default_payloads) 
