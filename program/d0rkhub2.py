@@ -6,7 +6,7 @@ import sqlite3
 import requests
 from bs4 import BeautifulSoup
 import time
-
+import whois
 
 db_name = 'd0rkhub data'
 con = sqlite3.connect(db_name)
@@ -17,16 +17,13 @@ con.execute('''CREATE TABLE IF NOT EXISTS saved_consults
 
 class Funcs:
     def clear(self):
-        self.range_entry.delete(0, END)
         self.domain_entry.delete(0, END)
         self.payloads_entry.delete(1.0,END)
-        self.dropdown.delete(0, END)
         self.results_entry.delete(1.0,END) 
+        self.whois_entry.delete(1.0,END)
     def request(self):
         domain = self.domain_entry.get()
         drop = self.dropdown.get()
-        range = self.range_entry.get()
-        print(range)
         print(drop)
         print(domain)
     def dork_generation(self):
@@ -57,7 +54,6 @@ class Funcs:
             self.payloads_entry.insert(tk.END,default_payloads) 
         else:
              self.payloads_entry.insert(tk.END,'Select the vulnerability!') 
-
     def consult(self):
             def google_search_urls(query):
                 search_query = "https://www.google.com/search?q=" + query.replace(' ', '+')
@@ -83,7 +79,10 @@ class Funcs:
             print(f'~ Results for : "{domain}" ~')
             for line in search_urls:
                 self.results_entry.insert(tk.END,line)
-
+    def whois(self):
+        domain = self.domain_entry.get()
+        consult = whois.whois(domain)
+        self.whois_entry.insert(tk.END,consult)
     
 class Application(Funcs):
     def __init__(self):
@@ -95,7 +94,6 @@ class Application(Funcs):
         self.buttons_frame1()
         self.buttons_frame2()
         self.entrys_frame2()
-        self.label_frame2()
         self.entrys_frame1()
         root.mainloop()
     def tela(self):
@@ -167,14 +165,15 @@ class Application(Funcs):
         self.results_entry.place(relx=0.4,rely=0.2)
         self.results_entry.configure(width=53,height=9)
 
-        self.range_entry = Entry(self.frame_2,highlightbackground="#787878",highlightthickness=1,border="0",bg="#dddddd")
-        self.range_entry.place(relx=0.8,rely=0.05)
-        self.range_entry.configure(width=5,font=('Arial', 12))
 
     def buttons_frame2(self): 
         self.btn_run = Button(self.frame_2,text="Run",bg="#5bc0de",fg="black", border="0",width=9,command=self.consult)
         self.btn_run.place(relx=0.6,rely=0.05)
         self.btn_run.configure(cursor="pirate")
+
+        self.btn_clean = Button(self.frame_2,text=" Clear",fg="black", border="0",width=7,highlightbackground="#ec7070",highlightthickness=1,bg="#f87159", command=self.clear)
+        self.btn_clean.place(relx=0.7,rely=0.05)
+        self.btn_clean.configure(cursor="pirate")
 
 
         self.save_data = Button(self.frame_2,text="Save data",bg="#66d76f",fg="black", border="0",width=9)
@@ -185,19 +184,19 @@ class Application(Funcs):
         self.generate_payload.place(relx=0.4,rely=0.05)
         self.save_data.configure(cursor="pirate")
 
-    def label_frame2(self):      
-        self.label_title_range = Label(self.frame_2,text='Payload range',bg="white",fg="#333333")
-        self.label_title_range.place(relx=0.7,rely=0.05)
-        self.label_title_range.config(font=('Helvetica neue',7))
-
     def entrys_frame1(self):
         self.domain_entry = Entry(self.frame_1,highlightbackground="#787878",highlightthickness=1,border="0",bg="#dddddd")
         self.domain_entry.place(relx=0.03,rely=0.4,height=40)
         self.domain_entry.configure(width=40,font=('Arial', 10))
+
+        self.whois_entry = Text(self.frame_1,highlightbackground="#787878",highlightthickness=1,border="0",bg="#dddddd")
+        self.whois_entry.place(relx=0.5,rely=0.1)
+        self.whois_entry.configure(width=43,height=10)
+
     def buttons_frame1(self):
-        self.btn_clean = Button(self.frame_1,text=" Clear",fg="black", border="0",width=7,highlightbackground="#ec7070",highlightthickness=1,bg="#f87159", command=self.clear)
-        self.btn_clean.place(relx=0.4,rely=0.4,height=40)
-        self.btn_clean.configure(cursor="pirate")
+        self.btn_try = Button(self.frame_1,text=" Try",fg="black", border="0",width=7,highlightbackground="#ec7070",highlightthickness=1,bg="#7975FA", command=self.whois)
+        self.btn_try.place(relx=0.4,rely=0.4,height=40)
+        self.btn_try.configure(cursor="pirate")
 
 Application()
 
