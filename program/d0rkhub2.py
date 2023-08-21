@@ -1,8 +1,91 @@
+import tkinter as tk
 from tkinter import *
 root = Tk()
 from tkinter import ttk
+import sqlite3
+import requests
+from bs4 import BeautifulSoup
+import time
 
-class Application():
+
+db_name = 'd0rkhub data'
+con = sqlite3.connect(db_name)
+con.execute('''CREATE TABLE IF NOT EXISTS saved_consults
+               (id INTEGER PRIMARY KEY NOT NULL,
+                domain VARCHAR NOT NULL,
+                results VARCHAR NOT NULL);''')
+
+class Funcs:
+    def clear(self):
+        self.range_entry.delete(0, END)
+        self.domain_entry.delete(0, END)
+        self.payloads_entry.delete(1.0,END)
+        self.dropdown.delete(0, END)
+        self.results_entry.delete(1.0,END) 
+    def request(self):
+        domain = self.domain_entry.get()
+        drop = self.dropdown.get()
+        range = self.range_entry.get()
+        print(range)
+        print(drop)
+        print(domain)
+    def dork_generation(self):
+        if (self.dropdown.get() == 'XSS INJECTION'):
+            with open('program/xss_dorks.txt', 'r') as d:
+                dork_file = d.read()
+                xss_payloads = (dork_file)  
+            self.payloads_entry.insert(tk.END,xss_payloads)
+        elif (self.dropdown.get() == 'SQL INJECTION'):
+            with open('program/sql_injection_dorks.txt', 'r') as d:
+                dork_file = d.read()
+                sql_payloads = (dork_file)
+            self.payloads_entry.insert(tk.END,sql_payloads)  
+        elif (self.dropdown.get() == 'HTML INJECTION'):
+            with open('program/html_injection.txt', 'r') as d:
+                dork_file = d.read()
+                html_payloads = (dork_file)
+            self.payloads_entry.insert(tk.END,html_payloads)  
+        elif (self.dropdown.get() == 'OPEN REDIRECT'):
+            with open('program/open_redirect_dorks.txt', 'r') as d:
+                dork_file = d.read()
+                open_redirect_payloads = (dork_file)
+            self.payloads_entry.insert(tk.END,open_redirect_payloads)  
+        elif (self.dropdown.get() == 'DEFAULT'):
+            with open('program/default_dorks.txt', 'r') as d:
+                dork_file = d.read()
+                default_payloads = (dork_file) 
+            self.payloads_entry.insert(tk.END,default_payloads) 
+        else:
+             self.payloads_entry.insert(tk.END,'Select the vulnerability!') 
+
+    def consult(self):
+            def google_search_urls(query):
+                search_query = "https://www.google.com/search?q=" + query.replace(' ', '+')
+
+
+                response = requests.get(search_query)
+
+
+                soup = BeautifulSoup(response.content, 'html.parser')
+
+
+                search_results = soup.find_all('a')
+                urls = [link['href'] for link in search_results if link['href'].startswith('/url?q=')]
+
+
+                clean_urls = [url.split('/url?q=')[1].split('&')[0] for url in urls]
+
+
+                return clean_urls
+            domain = self.domain_entry.get()
+            search_urls = google_search_urls('intitle:index of ' + f' site: {domain}') 
+            print('')
+            print(f'~ Results for : "{domain}" ~')
+            for line in search_urls:
+                self.results_entry.insert(tk.END,line)
+
+    
+class Application(Funcs):
     def __init__(self):
         self.root = root
         self.tela()
@@ -76,29 +159,35 @@ class Application():
         self.payloads_entry.place(relx=0.02,rely=0.2)
         self.payloads_entry.configure(width=34,height=9)
         
-        self.dropdown = ttk.Combobox(self.frame_2, values=['XSS INJECTION', 'SQL INJECTION', 'HTML INJECTION','OPEN REDIRECT'],width=42)
+        self.dropdown = ttk.Combobox(self.frame_2, values=['XSS INJECTION', 'SQL INJECTION', 'HTML INJECTION','OPEN REDIRECT','DEFAULT'],width=42)
         self.dropdown.insert(0,'Vulnerability')
         self.dropdown.place(relx=0.02,rely=0.05)
 
         self.results_entry = Text(self.frame_2,highlightbackground="#787878",highlightthickness=1,border="0",bg="#dddddd")
         self.results_entry.place(relx=0.4,rely=0.2)
-        self.results_entry.configure(width=34,height=9)
+        self.results_entry.configure(width=53,height=9)
 
         self.range_entry = Entry(self.frame_2,highlightbackground="#787878",highlightthickness=1,border="0",bg="#dddddd")
-        self.range_entry.place(relx=0.8,rely=0.7,height=45)
-        self.range_entry.configure(width=5,font=('Arial', 18))
+        self.range_entry.place(relx=0.8,rely=0.05)
+        self.range_entry.configure(width=5,font=('Arial', 12))
 
     def buttons_frame2(self): 
-        self.btn_run = Button(self.frame_2,text="Run",bg="#5bc0de",fg="white", border="0",width=9)
-        self.btn_run.place(relx=0.8,rely=0.2,height=30)
+        self.btn_run = Button(self.frame_2,text="Run",bg="#5bc0de",fg="black", border="0",width=9,command=self.consult)
+        self.btn_run.place(relx=0.6,rely=0.05)
         self.btn_run.configure(cursor="pirate")
 
-        self.save_data = Button(self.frame_2,text="Save data",bg="#66d76f",fg="white", border="0",width=9)
-        self.save_data.place(relx=0.8,rely=0.4,height=30)
-        self.save_data.configure(cursor="pirate") 
+
+        self.save_data = Button(self.frame_2,text="Save data",bg="#66d76f",fg="black", border="0",width=9)
+        self.save_data.place(relx=0.5,rely=0.05)
+        self.save_data.configure(cursor="pirate")
+
+        self.generate_payload = Button(self.frame_2,text='generate',bg="#F8FB8E",fg="black", border="0",width=9,command=self.dork_generation)
+        self.generate_payload.place(relx=0.4,rely=0.05)
+        self.save_data.configure(cursor="pirate")
+
     def label_frame2(self):      
         self.label_title_range = Label(self.frame_2,text='Payload range',bg="white",fg="#333333")
-        self.label_title_range.place(relx=0.8,rely=0.6)
+        self.label_title_range.place(relx=0.7,rely=0.05)
         self.label_title_range.config(font=('Helvetica neue',7))
 
     def entrys_frame1(self):
@@ -106,7 +195,7 @@ class Application():
         self.domain_entry.place(relx=0.03,rely=0.4,height=40)
         self.domain_entry.configure(width=40,font=('Arial', 10))
     def buttons_frame1(self):
-        self.btn_clean = Button(self.frame_1,text=" Clear",fg="black", border="0",width=7,highlightbackground="#ec7070",highlightthickness=1,bg="#f87159")
+        self.btn_clean = Button(self.frame_1,text=" Clear",fg="black", border="0",width=7,highlightbackground="#ec7070",highlightthickness=1,bg="#f87159", command=self.clear)
         self.btn_clean.place(relx=0.4,rely=0.4,height=40)
         self.btn_clean.configure(cursor="pirate")
 
