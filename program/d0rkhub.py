@@ -7,6 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import whois
+import socket
 
 db_name = 'd0rkhub_data'
 con = sqlite3.connect(db_name)
@@ -21,6 +22,7 @@ class Funcs:
         self.payloads_entry.delete(1.0,END)
         self.results_entry.delete(1.0,END) 
         self.whois_entry.delete(1.0,END)
+        self.label_ip.destroy()
     def request(self):
         domain = self.domain_entry.get()
         drop = self.dropdown.get()
@@ -78,7 +80,11 @@ class Funcs:
         domain = self.domain_entry.get()
         consult = whois.whois(domain)
         self.whois_entry.insert(tk.END,consult)
-    
+        get_ip = socket.gethostbyname(domain)
+        self.label_ip = Label(self.frame_1,text=f'IP:{get_ip}',bg="white",fg="green")
+        self.label_ip.place(relx=0.03,rely=0.7)
+        self.label_ip.config(font=('Helvetica neue',10))
+        
 class Application(Funcs):
     def __init__(self):
         self.root = root
