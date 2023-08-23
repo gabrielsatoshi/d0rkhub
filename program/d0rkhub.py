@@ -1,3 +1,4 @@
+from datetime import datetime
 import tkinter as tk
 from tkinter import *
 root = Tk()
@@ -81,9 +82,9 @@ class Funcs:
         consult = whois.whois(domain)
         self.whois_entry.insert(tk.END,consult)
         get_ip = socket.gethostbyname(domain)
-        self.label_ip = Label(self.frame_1,text=f'IP:{get_ip}',bg="white",fg="green")
-        self.label_ip.place(relx=0.03,rely=0.7)
-        self.label_ip.config(font=('Helvetica neue',10))
+        #self.label_ip = Label(self.frame_1,text=f'IP:{get_ip}',bg="white",fg="green")
+        #self.label_ip.place(relx=0.03,rely=0.7)
+        #self.label_ip.config(font=('Helvetica neue',10))
         
 class Application(Funcs):
     def __init__(self):
@@ -100,9 +101,9 @@ class Application(Funcs):
     def tela(self):
         self.root.title("D0rkhub")
         self.root.resizable(False,False)
-        self.root.geometry("800x520")
+        self.root.geometry("1000x620")
         self.root.lift
-        self.root.configure(background="#dddddd")
+        self.root.configure(background="#fcfffe")
     def frames(self):
         self.frame_1 = Frame(self.root,bd=4,bg="#ffffff",highlightbackground="#787878",highlightthickness=1)
         self.frame_1.place(relx="0.03",rely="0.06",relwidth=0.94,relheight=0.4)
@@ -111,93 +112,110 @@ class Application(Funcs):
         self.frame_2.place(relx="0.03",rely="0.5",relwidth=0.94,relheight=0.4)
     def nav_bar(self):
         #Botões nav bar
-        self.btn_d0rkhub = Button(self.root,text="d0rkhub",bg="#dddddd",fg="black", border="0")
+        self.btn_d0rkhub = Button(self.root,text="d0rkhub",bg="#fcfffe",fg="black", border="0")
         self.btn_d0rkhub.place(x=20,y=3)
         self.btn_d0rkhub.configure(cursor="pirate")
 
 
-        self.btn_database = Button(self.root,text="database",bg="#dddddd",fg="black", border="0")
+        self.btn_database = Button(self.root,text="database",bg="#fcfffe",fg="black", border="0")
         self.btn_database.place(x=80,y=3)
         self.btn_database.configure(cursor="pirate")
         
-        self.btn_config = Button(self.root,text="config",bg="#dddddd",fg="black", border="0")
+        self.btn_config = Button(self.root,text="config",bg="#fcfffe",fg="black", border="0")
         self.btn_config.place(x=140,y=3)
         self.btn_config.configure(cursor="pirate")
 
 
-        self.btn_info = Button(self.root,text="info",bg="#dddddd",fg="black", border="0")
+        self.btn_info = Button(self.root,text="info",bg="#fcfffe",fg="black", border="0")
         self.btn_info.place(x=190,y=3)
         self.btn_info.configure(cursor="pirate")
 
 
-        self.btn_payloads = Button(self.root,text="payloads",bg="#dddddd",fg="black", border="0")
+        self.btn_payloads = Button(self.root,text="payloads",bg="#fcfffe",fg="black", border="0")
         self.btn_payloads.place(x=225,y=3)
         self.btn_payloads.configure(cursor="pirate")
 
 
-        self.btn_other = Button(self.root,text="other",bg="#dddddd",fg="black", border="0")
+        self.btn_other = Button(self.root,text="other",bg="#fcfffe",fg="black", border="0")
         self.btn_other.place(x=290,y=3)
         self.btn_other.configure(cursor="pirate")
 
 
-        self.btn_help = Button(self.root,text="help",bg="#dddddd",fg="black", border="0")
+        self.btn_help = Button(self.root,text="help",bg="#fcfffe",fg="black", border="0")
         self.btn_help.place(x=335,y=3)
         self.btn_help.configure(cursor="pirate")
 
 
     def labels_frame1(self):
-        self.label_title = Label(self.frame_1,text='The D0rkhub',bg="white",fg="#333333")
-        self.label_title.place(relx=0.03,rely=0.05)
-        self.label_title.config(font=('Helvetica neue',15))
+        self.label_title = Label(self.frame_1,text='D0rkhub',bg="white",fg="#333333")
+        self.label_title.place(x=55,y=50)
+        self.label_title.config(font=('Courier new',25))
 
-        self.label_domain = Label(self.frame_1,text='target domain ',bg="white",fg="#333333")
-        self.label_domain.place(relx=0.03,rely=0.2,height=45)
-        self.label_domain.config(font=('Helvetica neue',8))
     def entrys_frame2(self):
-        self.payloads_entry = Text(self.frame_2,highlightbackground="#787878",highlightthickness=1,border="0",bg="#dddddd")
+        self.payloads_entry = Text(self.frame_2,highlightbackground="#787878",highlightthickness=1,border="0",bg="#f4f4f4")
         self.payloads_entry.place(relx=0.02,rely=0.2)
         self.payloads_entry.configure(width=34,height=9)
         
         self.dropdown = ttk.Combobox(self.frame_2, values=['XSS INJECTION', 'SQL INJECTION', 'HTML INJECTION','DEFAULT'],width=42)
         self.dropdown.insert(0,'Vulnerability')
-        self.dropdown.place(relx=0.02,rely=0.05)
+        self.dropdown.place(x=20,y=20)
 
-        self.results_entry = Text(self.frame_2,highlightbackground="#787878",highlightthickness=1,border="0",bg="#dddddd")
+        self.results_entry = Text(self.frame_2,highlightbackground="#787878",highlightthickness=1,border="0",bg="#f4f4f4")
         self.results_entry.place(relx=0.4,rely=0.2)
-        self.results_entry.configure(width=53,height=9)
+        self.results_entry.configure(width=64,height=9)
 
 
     def buttons_frame2(self): 
-        self.btn_run = Button(self.frame_2,text="Run",bg="#5bc0de",fg="black", border="0",width=9,command=self.consult)
-        self.btn_run.place(relx=0.6,rely=0.05)
+        self.btn_run = Button(self.frame_2,text="Run",bg="#5c5c5c",fg="white", border="0",width=11,command=self.consult)
+        self.btn_run.place(relx=0.6,rely=0.05,height=28)
         self.btn_run.configure(cursor="pirate")
 
-        self.btn_clean = Button(self.frame_2,text=" Clear",fg="black", border="0",width=7,highlightbackground="#ec7070",highlightthickness=1,bg="#f87159", command=self.clear)
-        self.btn_clean.place(relx=0.7,rely=0.05)
+        self.btn_clean = Button(self.frame_2,text=" Clear",fg="white", border="0",width=11,highlightbackground="#ec7070",highlightthickness=1,bg="#5c5c5c", command=self.clear)
+        self.btn_clean.place(relx=0.7,rely=0.05,height=28)
         self.btn_clean.configure(cursor="pirate")
 
 
-        self.save_data = Button(self.frame_2,text="Save data",bg="#66d76f",fg="black", border="0",width=9)
-        self.save_data.place(relx=0.5,rely=0.05)
+        self.save_data = Button(self.frame_2,text="Save data",bg="#5c5c5c",fg="white", border="0",width=11)
+        self.save_data.place(relx=0.5,rely=0.05,height=28)
         self.save_data.configure(cursor="pirate")
 
-        self.generate_payload = Button(self.frame_2,text='generate',bg="#F8FB8E",fg="black", border="0",width=9,command=self.dork_generation)
-        self.generate_payload.place(relx=0.4,rely=0.05)
+        self.generate_payload = Button(self.frame_2,text='generate',bg="#5c5c5c",fg="white", border="0",width=11,command=self.dork_generation)
+        self.generate_payload.place(relx=0.4,rely=0.05,height=28)
         self.save_data.configure(cursor="pirate")
 
     def entrys_frame1(self):
-        self.domain_entry = Entry(self.frame_1,highlightbackground="#787878",highlightthickness=1,border="0",bg="#dddddd")
-        self.domain_entry.place(relx=0.03,rely=0.4,height=40)
-        self.domain_entry.configure(width=40,font=('Arial', 10))
+        self.domain_entry = Entry(self.frame_1,highlightbackground="#787878",highlightthickness=1,border="0",bg="white")
+        self.domain_entry.place(relx=0.05,rely=0.4,height=30)
+        self.domain_entry.configure(width=18,font=('Arial', 12))    
 
-        self.whois_entry = Text(self.frame_1,highlightbackground="#787878",highlightthickness=1,border="0",bg="#dddddd")
-        self.whois_entry.place(relx=0.5,rely=0.1)
-        self.whois_entry.configure(width=43,height=10)
+        self.dropdown = ttk.Combobox(self.frame_1, values=['XSS INJECTION', 'SQL INJECTION', 'HTML INJECTION','DEFAULT'],width=24)
+        self.dropdown.insert(0,'Vulnerability')
+        self.dropdown.place(x=47,y=130)
+
+        self.whois_entry = Text(self.frame_1,highlightbackground="#787878",highlightthickness=1,border="0",bg="#f4f4f4")
+        self.whois_entry.place(x=250,y=35)
+        self.whois_entry.configure(width=60,height=10)
 
     def buttons_frame1(self):
-        self.btn_try = Button(self.frame_1,text=" Try",fg="black", border="0",width=7,highlightbackground="#ec7070",highlightthickness=1,bg="#7975FA", command=self.whois)
-        self.btn_try.place(relx=0.4,rely=0.4,height=40)
+        self.btn_try = Button(self.frame_1,text="Run",fg="white", border="0",width=8,highlightbackground="#ec7070",highlightthickness=1,bg="#65d8f9", command=self.whois)
+        self.btn_try.place(x=97,y=165,height=30)
         self.btn_try.configure(cursor="pirate")
+
+        self.save_data_ = Button(self.frame_1,text="Save data",bg="#5c5c5c",fg="#ffffff", border="0",width=10)
+        self.save_data_.place(x=790,y=35,height=32)
+        self.save_data_.configure(cursor="pirate",font=('Helvetica neue', 10))
+
+        self.whois_ = Button(self.frame_1,text="Whois",bg="#5c5c5c",fg="#ffffff", border="0",width=10)
+        self.whois_.place(x=790,y=78,height=32)
+        self.whois_.configure(cursor="pirate",font=('Helvetica neue', 10))
+
+        self.ip_ = Button(self.frame_1,text="Ip",bg="#5c5c5c",fg="#ffffff", border="0",width=10)
+        self.ip_.place(x=790,y=123,height=32)
+        self.ip_.configure(cursor="pirate",font=('Helvetica neue', 10))
+
+        self.clear_ = Button(self.frame_1,text="Clear",bg="#5c5c5c",fg="#ffffff", border="0",width=10)
+        self.clear_.place(x=790,y=167,height=32)
+        self.clear_.configure(cursor="pirate",font=('Helvetica neue', 10))
 
 Application()
 
