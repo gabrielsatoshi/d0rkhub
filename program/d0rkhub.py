@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 import time
 import whois
 import socket
+import urllib.parse
 
 db_name = 'd0rkhub_data'
 con = sqlite3.connect(db_name)
@@ -30,7 +31,7 @@ class Funcs:
         print(domain)
     def dork_generation(self):
         if (self.dropdown.get() == 'XSS INJECTION'):
-            with open('../payloads/xss_dorks.txt', 'r') as d:
+            with open('../payloads/xss.txt', 'r') as d:
                 dork_file = d.read()
                 xss_payloads = (dork_file)  
             self.payloads_entry.insert(tk.END,xss_payloads)
@@ -79,7 +80,7 @@ class Funcs:
                 domain = self.domain_entry.get()
                 search_urls = google_search_urls(sql_payloads + f' site: {domain}') 
                 for line in search_urls:
-                    self.consult_entry.insert(tk.END,f'{line}\n')
+                    self.consult_entry.insert(tk.END,f'{urllib.parse.unquote(line)}\n')
 
             elif(self.dropdown_con.get() == 'HTML INJECTION'):
                 def google_search_urls(query):
@@ -103,7 +104,7 @@ class Funcs:
                 domain = self.domain_entry.get()
                 search_urls = google_search_urls(html_payloads + f' site: {domain}') 
                 for line in search_urls:
-                    self.consult_entry.insert(tk.END,f'{line}\n')
+                    self.consult_entry.insert(tk.END,f'{urllib.parse.unquote(line)}\n')
 
 
             elif(self.dropdown_con.get() == 'XSS INJECTION'):
@@ -128,7 +129,7 @@ class Funcs:
                 domain = self.domain_entry.get()
                 search_urls = google_search_urls(xss_payloads + f' site: {domain}') 
                 for line in search_urls:
-                    self.consult_entry.insert(tk.END,f'{line}\n')
+                    self.consult_entry.insert(tk.END,f'{urllib.parse.unquote(line)}\n')
 
 
             elif(self.dropdown_con.get() == 'DEFAULT'):
