@@ -1,3 +1,0 @@
-<img \x00src=x onerror="javascript:alert(1)">
-<img src\x09=x onerror="javascript:alert(1)">
-<script>alert('Try')</script>

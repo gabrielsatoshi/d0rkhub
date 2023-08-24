@@ -1,6 +1,0 @@
-<TITLE> DEFACED </TITLE>
-<FONT FACE=Courier>
-  <center><tt><h1 style="text-shadow: 0 0 0.5em red"><center class="Text" >Hacked</center></h1></tt>
-<FONT FACE=Courier>
-<marquee align="center" scrollamount="6" width="560"><font color="red" size="5"class= "Animation" >By /l1nus </h1></tt>
-</marquee>
