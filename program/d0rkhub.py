@@ -171,14 +171,14 @@ class Funcs:
 
                     return clean_urls
                 
-                with open('../dorks/open_redirect.txt', 'r') as d:
+                with open('../dorks/default.txt', 'r') as d:
                     dork_file = d.read()
-                    open_payloads = (dork_file)
+                    open_redirect = (dork_file)
 
                 domain = self.domain_entry.get()
-                search_urls = google_search_urls(open_payloads + f' site: {domain}') 
+                search_urls = google_search_urls(open_redirect + f' site: {domain}') 
                 for line in search_urls:
-                    self.consult_entry(tk.END,f'{line}\n')
+                    self.consult_entry.insert(tk.END,f'{urllib.parse.unquote(line)}\n')
             else:
                 print('ELSEEEEEE')
     def whois(self):
