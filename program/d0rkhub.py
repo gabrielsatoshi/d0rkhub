@@ -1,34 +1,45 @@
-from datetime import datetime
+#Importando todos os módulos necessários.
+
 import tkinter as tk
 from tkinter import *
-root = Tk()
 from tkinter import ttk
 import sqlite3
 import requests
 from bs4 import BeautifulSoup
-import time
 import whois
 import socket
 import urllib.parse
+import getinformation
+#Definindo janela root.
 
-db_name = 'd0rkhub_data'
+root = Tk()
+
+#Criando o banco de dados.
+
+db_name = 'banco_dorkhub'
 con = sqlite3.connect(db_name)
 con.execute('''CREATE TABLE IF NOT EXISTS saved_consults
-               (id INTEGER PRIMARY KEY NOT NULL,
+            (id INTEGER PRIMARY KEY NOT NULL,
                 domain VARCHAR NOT NULL,
                 results VARCHAR NOT NULL);''')
 
+# Definindo a classe de funcionalidades.
 class Funcs:
+
+    #Funcionalidade de limpar campos.
     def clear(self):
         self.domain_entry.delete(0, END)
         self.payloads_entry.delete(1.0,END)
         self.results_entry.delete(1.0,END) 
-        self.whois_entry.delete(1.0,END)
+        self.consult_entry.delete(1.0,END)
+    
+    #Capturando campos.
     def request(self):
         domain = self.domain_entry.get()
         drop = self.dropdown.get()
-        print(drop)
-        print(domain)
+
+
+    #Criação dos payloads para cada vulnerabilidade.
     def dork_generation(self):
         if (self.dropdown.get() == 'XSS INJECTION'):
             with open('../payloads/xss.txt', 'r') as d:
@@ -52,6 +63,8 @@ class Funcs:
             self.payloads_entry.insert(tk.END,default_payloads) 
         else:
              self.payloads_entry.insert(tk.END,'Select the vulnerability!') 
+    
+    #Criação das consultas por sites, utilizando parametro por vulnerabilidade.
     def consult(self):
             if (self.dropdown_con.get() != 'SQL INJECTION' and self.dropdown_con.get() != 'XSS INJECTION' and self.dropdown_con.get() != 'HTML INJECTION' and self.dropdown_con.get() != 'DEFAULT' and self.dropdown_con.get() != 'OPEN REDIRECT' ):
                 self.label_error = Label(self.frame_1,text='select a vulnerability!',bg="white",fg="red")
@@ -73,7 +86,7 @@ class Funcs:
 
                     return clean_urls
                 
-                with open('../dorks/sql_injection.txt', 'r') as d:
+                with open('../google_dorks/sqli.txt', 'r') as d:
                     dork_file = d.read()
                     sql_payloads = (dork_file)  
                 
@@ -97,7 +110,7 @@ class Funcs:
 
                     return clean_urls
                 
-                with open('../dorks/html_injection.txt', 'r') as d:
+                with open('../google_dorks/htmli.txt', 'r') as d:
                     dork_file = d.read()
                     html_payloads = (dork_file)  
                 
@@ -122,7 +135,7 @@ class Funcs:
 
                     return clean_urls
                 
-                with open('../dorks/xss_dorks.txt', 'r') as d:
+                with open('../google_dorks/xss.txt', 'r') as d:
                     dork_file = d.read()
                     xss_payloads = (dork_file)  
 
@@ -147,7 +160,7 @@ class Funcs:
 
                     return clean_urls
                 
-                with open('../dorks/default.txt', 'r') as d:
+                with open('../google_dorks/default.txt', 'r') as d:
                     dork_file = d.read()
                     default_payloads = (dork_file)
 
@@ -171,7 +184,7 @@ class Funcs:
 
                     return clean_urls
                 
-                with open('../dorks/default.txt', 'r') as d:
+                with open('../google_dorks/default.txt', 'r') as d:
                     dork_file = d.read()
                     open_redirect = (dork_file)
 
@@ -181,15 +194,14 @@ class Funcs:
                     self.consult_entry.insert(tk.END,f'{urllib.parse.unquote(line)}\n')
             else:
                 print('ELSEEEEEE')
+    
+    #Realizando consulta no Whois.
     def whois(self):
         domain = self.domain_entry.get()
-        consult = whois.whois(domain)
-        self.whois_entry.insert(tk.END,consult)
-        get_ip = socket.gethostbyname(domain)
-        #self.label_ip = Label(self.frame_1,text=f'IP:{get_ip}',bg="white",fg="green")
-        #self.label_ip.place(relx=0.03,rely=0.7)
-        #self.label_ip.config(font=('Helvetica neue',10))
-        
+        consult = getinformation.a()
+        self.payloads_entry(tk.END,consult)
+
+# Definindo a classe aplication.
 class Application(Funcs):
     def __init__(self):
         self.root = root
@@ -202,20 +214,26 @@ class Application(Funcs):
         self.entrys_frame2()
         self.entrys_frame1()
         root.mainloop()
+    
+    #Configurações da tela
     def tela(self):
         self.root.title("D0rkhub")
         self.root.resizable(False,False)
         self.root.geometry("1000x620")
         self.root.lift
         self.root.configure(background="#fcfffe")
+    
+    #Separação da tela.
     def frames(self):
         self.frame_1 = Frame(self.root,bd=4,bg="#ffffff",highlightbackground="#787878",highlightthickness=1)
         self.frame_1.place(relx="0.03",rely="0.06",relwidth=0.94,relheight=0.4)
        
         self.frame_2 = Frame(self.root,bd=4,bg="#ffffff",highlightbackground="#787878",highlightthickness=1)
         self.frame_2.place(relx="0.03",rely="0.5",relwidth=0.94,relheight=0.4)
+    
+    # Botões da barra de navegação.
     def nav_bar(self):
-        #Botões nav bar
+    
         self.btn_d0rkhub = Button(self.root,text="d0rkhub",bg="#fcfffe",fg="black", border="0")
         self.btn_d0rkhub.place(x=20,y=3)
         self.btn_d0rkhub.configure(cursor="pirate")
@@ -249,12 +267,13 @@ class Application(Funcs):
         self.btn_help.place(x=335,y=3)
         self.btn_help.configure(cursor="pirate")
 
-
+    #Textos do primeiro frame
     def labels_frame1(self):
         self.label_title = Label(self.frame_1,text='D0rkhub',bg="white",fg="#333333")
         self.label_title.place(x=55,y=50)
         self.label_title.config(font=('Courier new',25))
 
+    #Campos de entrada do segundo frame
     def entrys_frame2(self):
         self.payloads_entry = Text(self.frame_2,highlightbackground="#787878",highlightthickness=1,border="0",bg="#f4f4f4")
         self.payloads_entry.place(relx=0.02,rely=0.2)
@@ -268,7 +287,7 @@ class Application(Funcs):
         self.results_entry.place(relx=0.4,rely=0.2)
         self.results_entry.configure(width=64,height=9)
 
-
+    #Botões do segundo frame
     def buttons_frame2(self): 
         self.btn_run = Button(self.frame_2,text="Run",bg="#5c5c5c",fg="white", border="0",width=11,command=self.consult)
         self.btn_run.place(relx=0.6,rely=0.05,height=28)
@@ -287,6 +306,7 @@ class Application(Funcs):
         self.generate_payload.place(relx=0.4,rely=0.05,height=28)
         self.save_data.configure(cursor="pirate")
 
+    #Campos de entrada primeiro frame.
     def entrys_frame1(self):
         self.domain_entry = Entry(self.frame_1,highlightbackground="#787878",highlightthickness=1,border="0",bg="white")
         self.domain_entry.place(relx=0.05,rely=0.4,height=30)
@@ -300,6 +320,7 @@ class Application(Funcs):
         self.consult_entry.place(x=250,y=35)
         self.consult_entry.configure(width=60,height=10)
 
+    #Botões primeiro frame
     def buttons_frame1(self):
         self.btn_try = Button(self.frame_1,text="Run",fg="white", border="0",width=8,highlightbackground="#ec7070",highlightthickness=1,bg="#65d8f9", command=self.consult)
         self.btn_try.place(x=97,y=165,height=30)
@@ -309,7 +330,7 @@ class Application(Funcs):
         self.save_data_.place(x=790,y=35,height=32)
         self.save_data_.configure(cursor="pirate",font=('Helvetica neue', 10))
 
-        self.whois_ = Button(self.frame_1,text="Whois",bg="#5c5c5c",fg="#ffffff", border="0",width=10)
+        self.whois_ = Button(self.frame_1,text="Whois",bg="#5c5c5c",fg="#ffffff", border="0",width=10,command=self.whois)
         self.whois_.place(x=790,y=78,height=32)
         self.whois_.configure(cursor="pirate",font=('Helvetica neue', 10))
 
@@ -321,5 +342,15 @@ class Application(Funcs):
         self.clear_.place(x=790,y=167,height=32)
         self.clear_.configure(cursor="pirate",font=('Helvetica neue', 10))
 
+    
+#Chamada de classe
 Application()
 
+
+
+#Códigos isolados.
+
+#get_ip = socket.gethostbyname(domain)
+#self.label_ip = Label(self.frame_1,text=f'IP:{get_ip}',bg="white",fg="green")
+#self.label_ip.place(relx=0.03,rely=0.7)
+#self.label_ip.config(font=('Helvetica neue',10))
