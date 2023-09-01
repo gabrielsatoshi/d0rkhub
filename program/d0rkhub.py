@@ -26,6 +26,22 @@ con.execute('''CREATE TABLE IF NOT EXISTS saved_consults
 # Definindo a classe de funcionalidades.
 class Funcs:
 
+    def limpar_consult(self):
+        self.consult_entry.delete(1.0,END)
+
+    def banco(self):
+        self.frame_3.destroy() 
+        self.frame_3 = Frame(self.root,bd=4,bg="black",highlightbackground="#787878",highlightthickness=1)
+        self.frame_3.place(relx="0.03",y="70",relwidth=0.94,relheight=0.4)
+
+        
+        self.btn_try = Button(self.frame_3,text="executar",fg="white", border="0",width=8,highlightbackground="#ec7070",highlightthickness=1,bg="#ff5a5a", command=self.consult)
+        self.btn_try.place(x=537,rely=0.1,height=25)
+        self.btn_try.configure(cursor="pirate",font=('Helvetica neue', 10))
+
+    def painel(self):
+        self.frame_3.destroy()
+
     #Funcionalidade de limpar campos.
     def clear(self):
         self.domain_entry.delete(0, END)
@@ -230,7 +246,8 @@ class Application(Funcs):
        
         self.frame_2 = Frame(self.root,bd=4,bg="#ffffff",highlightbackground="#787878",highlightthickness=1)
         self.frame_2.place(relx="0.03",y="345",relwidth=0.94,relheight=0.4)
-    
+
+
     # Botões da barra de navegação.
     def nav_bar(self):
     
@@ -295,13 +312,13 @@ class Application(Funcs):
 
     #Botões primeiro frame
     def buttons_frame1(self):        
-        self.btn_painel = Button(self.root,text="Painel",fg="#3b3b3b", border="1",width=14,highlightbackground="#dddddd",highlightthickness=2,bg="#f4f4f4", command=self.consult)
+        self.btn_painel = Button(self.root,text="Painel",fg="#3b3b3b", border="1",width=14,highlightbackground="#dddddd",highlightthickness=2,bg="#f4f4f4", command=self.painel)
         self.btn_painel.place(x=32,y=45,height=25)
         self.btn_painel.configure(cursor="pirate")
 
-        self.btn_painel = Button(self.root,text="Banco",fg="#3b3b3b", border="1",width=13,highlightbackground="#dddddd",highlightthickness=2,bg="#f4f4f4", command=self.consult)
-        self.btn_painel.place(x=138,y=45,height=25)
-        self.btn_painel.configure(cursor="pirate")
+        self.btn_banco = Button(self.root,text="Banco",fg="#3b3b3b", border="1",width=13,highlightbackground="#dddddd",highlightthickness=2,bg="#f4f4f4", command=self.banco)
+        self.btn_banco.place(x=138,y=45,height=25)
+        self.btn_banco.configure(cursor="pirate")
 
         self.btn_payloads = Button(self.root,text="Payloads",fg="#3b3b3b", border="1",width=13,highlightbackground="#dddddd",highlightthickness=2,bg="#f4f4f4", command=self.consult)
         self.btn_payloads.place(x=235,y=45,height=25)
@@ -350,7 +367,7 @@ class Application(Funcs):
         self.copiar_.place(x=720,rely=0.1,height=25)
         self.copiar_.configure(cursor="pirate",font=('Helvetica neue', 10))
 
-        self.clear_ = Button(self.frame_1,text="limpar",bg="#ff5a5a",fg="#ffffff", border="0",width=10)
+        self.clear_ = Button(self.frame_1,text="limpar",bg="#ff5a5a",fg="#ffffff", border="0",width=10,command=self.limpar_consult)
         self.clear_.place(x=820,rely=0.1,height=25)
         self.clear_.configure(cursor="pirate",font=('Helvetica neue', 10))
 
