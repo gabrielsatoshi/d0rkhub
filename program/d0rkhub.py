@@ -9,7 +9,8 @@ from bs4 import BeautifulSoup
 import whois
 import socket
 import urllib.parse
-
+import customtkinter
+import pyperclip
 #Definindo janela root.
 
 root = Tk()
@@ -28,6 +29,11 @@ class Funcs:
 
     def limpar_consult(self):
         self.consult_entry.delete(1.0,END)
+    
+    def copiar_consulta(self):
+        copiando =  self.consult_entry.get(1.0,END)
+        pyperclip.copy(copiando)
+
 
     def banco(self):
         self.frame_3.destroy() 
@@ -298,13 +304,15 @@ class Application(Funcs):
 
     #Campos de entrada primeiro frame.
     def entrys_frame1(self):
-        self.domain_entry = Entry(self.frame_1,highlightbackground="#787878",highlightthickness=1,border="0",bg="white")
-        self.domain_entry.place(relx=0.05,rely=0.1,height=25)
-        self.domain_entry.configure(width=30,font=('Arial', 9))    
+        self.domain_entry = customtkinter.CTkEntry(master=self.frame_1,placeholder_text='www.google.com.br',border_width=1)
+        self.domain_entry.place(x=50,y=25)
+        self.domain_entry.configure(width=230,height=25)
+
 
         self.dropdown_con = ttk.Combobox(self.frame_1, values=['XSS INJECTION', 'SQL INJECTION', 'HTML INJECTION','OPEN REDIRECT','DEFAULT'],width=34)
         self.dropdown_con.insert(0,'Vulnerability')
         self.dropdown_con.place(x=290,rely=0.1,height=25)
+
 
         self.consult_entry = Text(self.frame_1,highlightbackground="#787878",highlightthickness=1,border="0",bg="#f4f4f4")
         self.consult_entry.place(x=50,y=70)
@@ -355,21 +363,21 @@ class Application(Funcs):
 
 
 
-        self.btn_try = Button(self.frame_1,text="executar",fg="white", border="0",width=8,highlightbackground="#ec7070",highlightthickness=1,bg="#ff5a5a", command=self.consult)
-        self.btn_try.place(x=537,rely=0.1,height=25)
-        self.btn_try.configure(cursor="pirate",font=('Helvetica neue', 10))
+        self.btn_executar = customtkinter.CTkButton(master=self.frame_1,text='Executar',border_width=0,fg_color='#ff5a5a',command=self.consult)
+        self.btn_executar.place(x=540,y=30)
+        self.btn_executar.configure(width=80,height=25)
 
-        self.save_data_ = Button(self.frame_1,text="salvar",bg="#ff5a5a",fg="#ffffff", border="0",width=10)
-        self.save_data_.place(x=620,rely=0.1,height=25)
-        self.save_data_.configure(cursor="pirate",font=('Helvetica neue', 10))
+        self.salvar_dados = customtkinter.CTkButton(master=self.frame_1,text='Salvar',border_width=0,fg_color='#ff5a5a')
+        self.salvar_dados .place(x=620,y=30)
+        self.salvar_dados .configure(width=78,height=25)
 
-        self.copiar_ = Button(self.frame_1,text="copiar",bg="#ff5a5a",fg="#ffffff", border="0",width=10,command=self.whois)
-        self.copiar_.place(x=720,rely=0.1,height=25)
-        self.copiar_.configure(cursor="pirate",font=('Helvetica neue', 10))
+        self.copiar_ = customtkinter.CTkButton(master=self.frame_1,text='Copiar',border_width=0,fg_color='#ff5a5a',command=self.copiar_consulta)
+        self.copiar_.place(x=720,y=30)
+        self.copiar_.configure(width=78,height=25)
 
-        self.clear_ = Button(self.frame_1,text="limpar",bg="#ff5a5a",fg="#ffffff", border="0",width=10,command=self.limpar_consult)
-        self.clear_.place(x=820,rely=0.1,height=25)
-        self.clear_.configure(cursor="pirate",font=('Helvetica neue', 10))
+        self.clear_ = customtkinter.CTkButton(master=self.frame_1,text='Limpar',border_width=0,fg_color='#ff5a5a',command=self.limpar_consult)
+        self.clear_.place(x=820,y=30)
+        self.clear_.configure(width=78,height=25)
 
     
 #Chamada de classe
