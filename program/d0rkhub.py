@@ -39,21 +39,69 @@ class Funcs:
     def copiar_campo_payloads(self):
         copiando =  self.inserir_payloads.get(1.0,END)
         pyperclip.copy(copiando)
-    
-    
+
+
     def banco_nav(self):
-        self.frame_3 = Frame(root,bd=0,bg="#ffffff")
-        self.frame_3.grid(ipadx=502, ipady=267,padx=31,pady=70)
+        global frame_banco
+        frame_banco = Frame(root,bd=0,bg="green")
+        frame_banco.grid(ipadx=470, ipady=257,padx=31,pady=70)
+        botao = Button(frame_banco,text='AMARELO')
+        botao.grid()
+        
+        
+        self.dropdown_vulnerabilidades = ttk.Combobox(self.frame_banco, values=['XSS INJECTION', 'SQL INJECTION', 'HTML INJECTION','OPEN REDIRECT','DEFAULT'],width=34)
+        self.dropdown_vulnerabilidades.insert(0,'Vulnerabilidades')
+        self.dropdown_vulnerabilidades.grid(x=290,rely=0.1,height=25)
+        
+        
         self.banco_ver.config(state=DISABLED)
-    def painel_nav(self):
+        self.comparar.config(state=ACTIVE)
+        self.payloads_ver.config(state=ACTIVE)
+        frame_comparador.grid_forget()
+        frame_payloads.grid_forget()
+
+    def comparador_nav(self):
+        global frame_comparador
+        frame_comparador = Frame(root,bd=0,bg="red")
+        frame_comparador.grid(ipadx=502, ipady=267,padx=31,pady=70)
+        self.comparar.config(state=DISABLED)
         self.banco_ver.config(state=ACTIVE)
         self.payloads_ver.config(state=ACTIVE)
-        self.frame_3.grid_forget()
-        self.frame_4.grid_forget()
+
+        frame_banco.grid_forget()
+        frame_payloads.grid_forget()
     def payloads_nav(self):
-        self.frame_4 = Frame(root,bd=4,bg="#ffffff",highlightbackground="#787878",highlightthickness=1)
-        self.frame_4.grid(ipadx=250, ipady=90,padx=200)
+        global frame_payloads
+        frame_payloads = Frame(root,bd=0,bg="blue")
+        frame_payloads.grid(ipadx=502, ipady=267,padx=31,pady=70)
+        
         self.payloads_ver.config(state=DISABLED)
+        self.comparar.config(state=ACTIVE)
+        self.banco_ver.config(state=ACTIVE)
+
+        frame_banco.grid_forget()
+        frame_comparador.grid_forget()
+   
+    def painel_nav(self):
+        self.comparar.config(state=ACTIVE)
+        self.banco_ver.config(state=ACTIVE)
+        self.payloads_ver.config(state=ACTIVE)
+
+        try:
+            frame_payloads.grid_forget()
+            frame_banco.grid_forget()
+            frame_comparador.grid_forget()
+        except Exception:    
+            try:
+                frame_banco.grid_forget()
+            except Exception:
+                try:
+                    frame_payloads.grid_forget()
+                except Exception:
+                    try:
+                        frame_comparador.grid_forget()
+                    except Exception:
+                        pass
     #Capturando campos.
     def request(self):
         domain = self.resultados_consulta.get()
@@ -339,7 +387,7 @@ class Application(Funcs):
     
     #Botões do root
     def buttons_root(self):
-        self.painel_ver = Button(self.root,text="Painel",fg="#3b3b3b", border="1",width=14,highlightbackground="#dddddd",highlightthickness=2,bg="#f4f4f4", command=self.painel_nav)
+        self.painel_ver = Button(self.root,text="Painel",fg="#3b3b3b", border="1",width=14,highlightbackground="#dddddd",highlightthickness=2,bg="#f4f4f4",command=self.painel_nav)
         self.painel_ver.place(x=32,y=45,height=25)
         self.painel_ver.configure(cursor="pirate")
 
@@ -351,7 +399,7 @@ class Application(Funcs):
         self.payloads_ver.place(x=235,y=45,height=25)
         self.payloads_ver.configure(cursor="pirate")
 
-        self.comparar = Button(self.root,text="Comparador",fg="#3b3b3b", border="1",width=13,highlightbackground="#dddddd",highlightthickness=2,bg="#f4f4f4", command=self.consult)
+        self.comparar = Button(self.root,text="Comparador",fg="#3b3b3b", border="1",width=13,highlightbackground="#dddddd",highlightthickness=2,bg="#f4f4f4", command=self.comparador_nav)
         self.comparar.place(x=335,y=45,height=25)
         self.comparar.configure(cursor="pirate")
 
