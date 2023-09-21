@@ -1,6 +1,5 @@
 https://dillinger.io/
-
-
+https://readme-typing-svg.herokuapp.com/demo/
 
 # Dorkhub
 ## O que é a ferramenta de pesquisa d0rkhub?
