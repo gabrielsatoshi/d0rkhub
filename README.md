@@ -25,7 +25,7 @@ Criado para  [DOS][df1] e melhorado com [Python.][df1]
 
 > O desing do Dorkhub foi criado pelo aluno Pedro Miguel
 > enquanto a codificação ficou com Gabriel Rodrigues
-> e a documentação por Victor tezeli , esse projeto é 
+> e a documentação por Victor tezeli e André W , esse projeto é 
 > totalmente gratuito para a utilização e modificação 
 > de quem quiser, inclusive para fins academicos e
 > sua utilização fica livre de acordo com os termos 
@@ -65,6 +65,9 @@ exemplo
 ## Plugins
 
 Exemplo de plugins
+Adobe acrobat reader: plugin independente, mais antigo e confiavel para fazer leituras de documentos no formato.pdf 
+
+Hp Print service : o plugin que pode ser baixado no smartphone android para enviar documentos para impressão na maquina HP sem a necessidade de usar o computador. 
 
 
 ## Desenvolvimento
