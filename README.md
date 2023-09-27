@@ -1,6 +1,6 @@
 # The Dorkhub🔎
 <h3>O que é o Projeto Dorkhub??</h3>
-<p>O</p>
+<p>O projeto dorkhub</p>
 
 - Retorno de até 10 sites contendo a vulnerabilidade escolhida pelo usuario.
 - Geração de Payloads para testar o site encontrado.
