@@ -45,9 +45,13 @@ A seguir uma lista das tecnologias utilizadas para desenvolver o projeto:
   
 ## Instalação
 
-Exemplo instalação
+primeiro passo: abre o navegador 
+segundo passo: faz a pesquisa na barra de busca do repositorio 
+terceiro passo: clicar na seta  para fazer o dowload do programa dentro do site 
+quarto passo: abrir o programa
+quinto passo: executar 
 
-exemplo exemplo exemplo
+exemplo 
 
 ```sh
 cd dillinger
