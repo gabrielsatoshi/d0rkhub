@@ -1,12 +1,6 @@
-https://dillinger.io/
-https://readme-typing-svg.herokuapp.com/demo/
-
-# Dorkhub
-## O que é a ferramenta de pesquisa d0rkhub?
-<img src="https://t.ctcdn.com.br/JlHwiRHyv0mTD7GfRkIlgO6eQX8=/640x360/smart/i257652.jpeg" width="100px">
-
-
-A ferramenta de pesquisa Dorkhub é uma ferramenta de segurança da informação que utiliza uma tecnica chamada Google hacking para buscar vulnerabilidades dentro de sites.
+# The Dorkhub🔎
+<h3>O que é o Projeto Dorkhub??</h3>
+<p>O</p>
 
 - Retorno de até 10 sites contendo a vulnerabilidade escolhida pelo usuario.
 - Geração de Payloads para testar o site encontrado.
@@ -84,5 +78,6 @@ Desenvolvimento
 ```
 
 ## Licença
-
+https://dillinger.io/
+https://readme-typing-svg.herokuapp.com/demo/
 **Colocar licença aqui**
