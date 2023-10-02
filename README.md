@@ -58,7 +58,7 @@ https://www.sitebaixar.com.br
 
 <h1>☕Executando o Programa (windows)</h1>
 
-<h3>Opção 1</h3>
+<h2>Opção 1</h2>
 
 * Dentro da pasta Requirements navegue até o arquivo `requirements.bat` e o execute.
 
@@ -69,6 +69,30 @@ Digite o seguinte código no terminal:
 python main.py
 ```
 <a href='https://www.youtube.com/'>Clique aqui para assistir um vídeo do processo apresentado.</a>
+
+<h2>Opção 2</h2>
+
+* Dentro do diretório Requirements navegue até o arquivo `requirements.bat` e o execute.
+
+* Navegue dentro do diretório `dorkhub` e execute o arquivo `dorkhub.bat`.
+
+<a href='https://www.youtube.com/'>Clique aqui para assistir um vídeo do processo apresentado.</a>
+
+<h2>Opção 3</h2>
+
+* É necessário que você tenha o `Visual Studio Code` (ou outros interpretadores) para esta opção.
+
+* Abra o Visual studio code.
+* Clique na opção `file` na barra de navegação.
+* Selecione a opção `Open folder`.
+* Navegue até o diretório do Dorkhub e o selecione.
+* Abra o script `main.py`.
+* Aperte a tecla `F5` ou clique em `Run python file`.
+
+<a href='https://www.youtube.com/'>Clique aqui para assistir um vídeo do processo apresentado.</a>
+
+
+
 
 
 
