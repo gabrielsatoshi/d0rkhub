@@ -1,6 +1,13 @@
 <h1>The DorkHub 🔎</h1>
+<div class = 'line'>
+<img src='https://img.shields.io/badge/python-green'> <img src='https://img.shields.io/badge/batch-blue'> <img src='https://img.shields.io/badge/Markdown-yellow'>
+</div>
+
+
 <h3>Uma breve introdução..</h3>
 
+<img src='https://upload.wikimedia.org/wikipedia/commons/8/83/Google_wordmark.gif' width='350px'>    
+  
 **Ferramentas de Pesquisa**
 
 <p>Primeiramente precisamos entender alguns conceitos antes de introduzir a ferramenta em si, um dos principais conceitos utilizados pelo projeto é o conceito de Ferramenta de Pesquisa
@@ -16,7 +23,7 @@ As ferramentas de pesquisa são métodos bem úteis para buscar por informaçõe
 É uma verdade quase inegável que o Google é um dos principais meios de obter informações, se persarmos em um site por exemplo, ao aplicarmos determinados filtros podemos escolher até o tipo de conteúdo que um site pode retornar em uma pesquisa. Agora imagine que o conteúdo que um site pode retornar seja sua própria ruína, isso é o que acontece quando vamos para a área de segurança da informação onde a obtenção de informações são extremamente valiosas, quando nos permitimos pensar como um analista de segurança da informação começamos a imaginar um cenário onde o Google retorne uma informação vital de algum sistema ou um erro por exemplo, sim, isso é possível , basta você ser criativo o suficiente para manipular o Google ao máximo.
 </p>
 
-<h1>O Projeto</h1>
+<h1>O Projeto⭐</h1>
 
 **Como surgiu?**
 
@@ -40,4 +47,6 @@ git clone https://github.com/gabrielsatoshi/d0rkhub.git
 https://www.sitebaixar.com.br
 ```
 <h1>Execução</h1>
+
+
 
