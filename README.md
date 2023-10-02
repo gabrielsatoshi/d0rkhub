@@ -110,7 +110,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       <a href="#">
         <img src="https://avatars.githubusercontent.com/u/143349252?v=4" width="100px;" alt="Foto do pedro"/><br>
         <sub>
-          <b>Pedro miguel - 22204422</b>
+          <b>Pedro miguel - 22204402</b>
         </sub>
       </a>
     </td>
