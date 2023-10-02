@@ -32,8 +32,12 @@ O principal objetivo do DorkHub é funcionar como uma ferramenta auxiliar para P
 **Instalação via Git e GitHub**
 
 ```
-git clone 
+git clone https://github.com/gabrielsatoshi/d0rkhub.git
 ```
+**Instalação via Site**
 
-
+```
+https://www.sitebaixar.com.br
+```
+<h1>Execução</h1>
 
