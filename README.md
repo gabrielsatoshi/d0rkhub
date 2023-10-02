@@ -58,8 +58,17 @@ https://www.sitebaixar.com.br
 
 <h1>☕Executando o Programa (windows)</h1>
 
-* Execute o arquivo `requirements.bat`
+<h3>Opção 1</h3>
 
+* Dentro da pasta Requirements navegue até o arquivo `requirements.bat` e o execute.
+
+* Após executar o arquivo `requirements.bat` abra o terminal na pasta `programs`.
+
+Digite o seguinte código no terminal:
+```
+python main.py
+```
+<a href='https://www.youtube.com/'>Clique aqui para assistir um vídeo do processo apresentado.</a>
 
 
 
