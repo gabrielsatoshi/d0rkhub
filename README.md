@@ -25,6 +25,9 @@ As ferramentas de pesquisa são métodos bem úteis para buscar por informaçõe
 
 <h1>O Projeto⭐</h1>
 
+![dorkhub](https://github.com/gabrielsatoshi/d0rkhub/assets/112598996/c88a2453-16f5-4b5c-b80d-da9645789587)
+
+
 **Como surgiu?**
 
 <p>Todo o projeto em si foi pensado em uma conversa de amigos, onde foi sugerido uma forma de facilitar ao máximo a obtenção de certas informações peculiares para rotinas de segurança da informação, após a conversa foi desenvolvido um primeiro protótipo e a ideia foi crescendo até chegar em uma ferramenta simples e funcional, o método de Google Dorks sempre foi algo utilizado em rotinas de segurança, a ideia aqui era automatizar ao máximo essa rotina, assim facilitando a vida do Analista,Pentester ou Bug Bounty Hunter.
