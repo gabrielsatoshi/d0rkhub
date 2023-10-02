@@ -92,6 +92,39 @@ python main.py
 
 <a href='https://www.youtube.com/'>Clique aqui para assistir um vídeo do processo apresentado.</a>
 
+## 🤝 Colaboradores
+
+Agradecemos às seguintes pessoas que contribuíram para este projeto:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/112598996?v=4" width="100px;" alt="Foto de gabrielsatoshi"/><br>
+        <sub>
+          <b>Gabriel rodrigues - 22204422</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/143349252?v=4" width="100px;" alt="Foto do pedro"/><br>
+        <sub>
+          <b>Pedro miguel - 22204422</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/145168015?v=4" width="100px;" alt="Foto do andré"/><br>
+        <sub>
+          <b>André aguiar - 22204422</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
 
 
 
