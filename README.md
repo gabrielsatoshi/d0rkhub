@@ -1,6 +1,7 @@
 <h1>🔎The DorkHub </h1>
 <div class = 'line'>
 <img src='https://img.shields.io/badge/python-green'> <img src='https://img.shields.io/badge/batch-blue'> <img src='https://img.shields.io/badge/Markdown-yellow'>
+<img src='https://img.shields.io/badge/SqLite-red'>
 </div>
 
 
