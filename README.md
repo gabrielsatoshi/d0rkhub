@@ -56,6 +56,11 @@ git clone https://github.com/gabrielsatoshi/d0rkhub.git
 https://www.sitebaixar.com.br
 ```
 
+<h1>☕Executando o Programa (windows)</h1>
+
+* Execute o arquivo `requirements.bat`
+
+
 
 
 
