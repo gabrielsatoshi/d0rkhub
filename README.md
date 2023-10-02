@@ -118,7 +118,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       <a href="#">
         <img src="https://avatars.githubusercontent.com/u/145168015?v=4" width="100px;" alt="Foto do andré"/><br>
         <sub>
-          <b>André aguiar - 22204803</b>
+          <b>André william - 22204803</b>
         </sub>
       </a>
     </td>
