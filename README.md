@@ -124,7 +124,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
         <td align="center">
       <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/145168015?v=4" width="100px;" alt="Foto do Victor"/><br>
+        <img src="https://avatars.githubusercontent.com/u/145451437?v=4" width="100px;" alt="Foto do Victor"/><br>
         <sub>
           <b>Victor Tezeli - 22110061</b>
         </sub>
