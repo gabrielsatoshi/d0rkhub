@@ -77,7 +77,7 @@ python main.py
 
 * Navegue dentro do diretório `dorkhub` e execute o arquivo `dorkhub.bat`.
 
-<a href='https://www.youtube.com/'>Clique aqui para assistir um vídeo do processo apresentado.</a>
+<a href='https://www.youtube.com/watch?v=o36qQVT4-2M'>Clique aqui para assistir um vídeo do processo apresentado.</a>
 
 <h2>Opção 3</h2>
 
